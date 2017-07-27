@@ -19,22 +19,22 @@ public class PrettyProduct {
 
 	private Long prodcutId;
 	private String productName;
-	private List<PrettyProject> projects;
+	private List<ProjectProperties> projectProperties;
+
 
 
 	public PrettyProduct(Product product) {
 		super();
 		this.prodcutId = product.getProdcutId();
 		this.productName = product.getProductName();
-		List<PrettyProject> allPrettyProjects = new ArrayList<PrettyProject>();
+		List<ProjectProperties> allProjectProperties = new ArrayList<ProjectProperties>();
 		if(product.getProjects() != null) {
 			for (Project project : product.getProjects()) {
-				PrettyProject prettyProject = new PrettyProject(project);
-				allPrettyProjects.add(prettyProject);
+				ProjectProperties projectProperties = new ProjectProperties(project.getProjectName(), project.getProjectId());
+				allProjectProperties.add(projectProperties);
 			}
 		}
-		
-		this.projects = allPrettyProjects;
+		this.projectProperties = allProjectProperties;
 	}
 
 
@@ -44,8 +44,8 @@ public class PrettyProduct {
 	public String getProductName() {
 		return productName;
 	}
-	public List<PrettyProject> getProjects() {
-		return projects;
+	public List<ProjectProperties> getProjectProperties() {
+		return projectProperties;
 	}
 
 
@@ -53,6 +53,18 @@ public class PrettyProduct {
 		Gson gson = new Gson();
 		String jsonString = gson.toJson(this);
 		return jsonString;
+	}
+	
+	
+	
+	public class ProjectProperties {
+		private String projectName;
+		private Long projectId;
+		public ProjectProperties(String projectName, Long projectId) {
+			super();
+			this.projectName = projectName;
+			this.projectId = projectId;
+		}
 	}
 	
 }
