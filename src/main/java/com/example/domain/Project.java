@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
+import com.example.domain.prettyOutputs.PrettyProject;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
@@ -23,7 +24,6 @@ public class Project implements java.io.Serializable {
 	private static final long serialVersionUID = 7884292690096443611L;
 
 	@Id
-	@Expose
 	private @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(updatable = false, nullable = false)
 	Long projectId;
@@ -33,7 +33,6 @@ public class Project implements java.io.Serializable {
 	int version = 0;
 
 	@Column
-	@Expose
 	private String projectName;
 
 	@ManyToOne(cascade=CascadeType.ALL)
@@ -41,7 +40,6 @@ public class Project implements java.io.Serializable {
 	private Product product;
 	
 	@OneToMany(mappedBy="project")
-	@Expose
 	private List<Build> builds;
 
 	
@@ -82,8 +80,8 @@ public class Project implements java.io.Serializable {
 	}
 
 	public String toString() {
-		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
-		String jsonString = gson.toJson(this);
-		return jsonString;
+		PrettyProject prettyProject = new PrettyProject(this);
+		Gson gson = new Gson();
+		return gson.toJson(prettyProject);
 	}
 }

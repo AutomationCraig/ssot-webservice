@@ -13,10 +13,13 @@ public class ProjectsOutput {
 	public ProjectsOutput(List<Project> projects) {
 		super();
 		List<PrettyProject> allPrettyProjects = new ArrayList<PrettyProject>();
-		for (Project project : projects) {
-			PrettyProject prettyProject = new PrettyProject(project);
-			allPrettyProjects.add(prettyProject);
+		if (projects != null) {
+			for (Project project : projects) {
+				PrettyProject prettyProject = new PrettyProject(project);
+				allPrettyProjects.add(prettyProject);
+			}
 		}
+		
 		this.projects = allPrettyProjects;
 	}
 

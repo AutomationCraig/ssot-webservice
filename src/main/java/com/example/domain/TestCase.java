@@ -24,7 +24,6 @@ public class TestCase implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Expose
 	private @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(updatable = false, nullable = false, unique = true)
 	Long testCaseId = null;
@@ -35,15 +34,12 @@ public class TestCase implements java.io.Serializable {
 
 
 	@Column
-	@Expose
 	private String description;
 
 	@Column
-	@Expose
 	private RunStatus runStatus;
 
 	@Column
-	@Expose
 	private Date timestamp;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
@@ -117,7 +113,7 @@ public class TestCase implements java.io.Serializable {
 	}
 	
 	public String toString() {
-		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
+		Gson gson = new Gson();
 		PrettyTestCase prettyTest = new PrettyTestCase(this);
 		String jsonString = gson.toJson(prettyTest);
 		return jsonString;

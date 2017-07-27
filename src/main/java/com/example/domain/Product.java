@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
+import com.example.domain.prettyOutputs.PrettyProduct;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
@@ -20,7 +21,6 @@ public class Product implements java.io.Serializable {
 	private static final long serialVersionUID = 7884292690096443611L;
 
 	@Id
-	@Expose
 	private @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(updatable = false, nullable = false)
 	Long prodcutId;
@@ -30,11 +30,9 @@ public class Product implements java.io.Serializable {
 	int version = 0;
 
 	@Column
-	@Expose
 	private String productName;
 	
 	@OneToMany(mappedBy="product")
-	@Expose
 	private List<Project> projects;
 
 	
@@ -69,8 +67,8 @@ public class Product implements java.io.Serializable {
 	}
 
 	public String toString() {
-		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
-		String jsonString = gson.toJson(this);
-		return jsonString;
+		PrettyProduct prettyProduct = new PrettyProduct(this);
+		Gson gson = new Gson();
+		return gson.toJson(prettyProduct);
 	}
 }

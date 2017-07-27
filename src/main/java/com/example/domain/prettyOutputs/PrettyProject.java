@@ -28,10 +28,13 @@ public class PrettyProject {
 		this.projectName = project.getProjectName();
 		this.productId = project.getProduct().getProdcutId();
 		List<PrettyBuild> allPrettyBuilds = new ArrayList<PrettyBuild>();
-		for (Build build : project.getBuilds()) {
-			PrettyBuild prettyBuild = new PrettyBuild(build);
-			allPrettyBuilds.add(prettyBuild);
+		if (project.getBuilds() != null) {
+			for (Build build : project.getBuilds()) {
+				PrettyBuild prettyBuild = new PrettyBuild(build);
+				allPrettyBuilds.add(prettyBuild);
+			}
 		}
+		
 		this.builds = allPrettyBuilds;
 	}
 

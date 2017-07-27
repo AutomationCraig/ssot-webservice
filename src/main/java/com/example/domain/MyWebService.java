@@ -21,6 +21,8 @@ import com.example.domain.payload.NewBuildPayload;
 import com.example.domain.payload.ProductsOutput;
 import com.example.domain.payload.ProjectsOutput;
 import com.example.domain.payload.TestCasesOutput;
+import com.example.domain.prettyOutputs.PrettyProduct;
+import com.example.domain.prettyOutputs.PrettyProject;
 import com.example.domain.prettyOutputs.PrettyTestCase;
 import com.example.domain.utils.DBSearch;
 import com.google.gson.Gson;
@@ -63,6 +65,26 @@ public class MyWebService {
 		Gson gson = new Gson();
 		return gson.toJson(output);
 	}
+	
+	/** Returns a list of all projects in the DB
+	 * 
+	 * @return
+	 */
+	@GET
+	@Path("/products/{product_id}")
+	@Produces("application/json")
+	public String getSpecificProduct(@PathParam("product_id") long productId) {
+		System.out.println("GET on specific Projects by id");
+
+		Product foundProduct = dbSearch.getProductByID(em, productId);
+		if (foundProduct == null) {
+			return "";
+		}
+		System.out.println("we are using product id : " + foundProduct.toString());
+		
+		Gson gson = new Gson();
+		return gson.toJson(new PrettyProduct(foundProduct));
+	}
 
 	/** Returns a list of all projects in the DB
 	 * 
@@ -82,6 +104,25 @@ public class MyWebService {
 		ProjectsOutput output = new ProjectsOutput(result);
 		Gson gson = new Gson();
 		return gson.toJson(output);
+	}
+	
+	/** Returns a list of all projects in the DB
+	 * 
+	 * @return
+	 */
+	@GET
+	@Path("/projects/{project_id}")
+	@Produces("application/json")
+	public String getSpecificProject(@PathParam("project_id") long projectId) {
+		System.out.println("GET on specific Projects by id");
+
+		Project foundProject = dbSearch.getProjectByID(em, projectId);
+		if (foundProject == null) return "";
+		
+		System.out.println("we are using project id : " + foundProject.toString());
+		
+		Gson gson = new Gson();
+		return gson.toJson(new PrettyProject(foundProject));
 	}
 	
 	/** Returns a list of all project Runs in the DB

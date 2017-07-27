@@ -27,10 +27,13 @@ public class PrettyProduct {
 		this.prodcutId = product.getProdcutId();
 		this.productName = product.getProductName();
 		List<PrettyProject> allPrettyProjects = new ArrayList<PrettyProject>();
-		for (Project project : product.getProjects()) {
-			PrettyProject prettyProject = new PrettyProject(project);
-			allPrettyProjects.add(prettyProject);
+		if(product.getProjects() != null) {
+			for (Project project : product.getProjects()) {
+				PrettyProject prettyProject = new PrettyProject(project);
+				allPrettyProjects.add(prettyProject);
+			}
 		}
+		
 		this.projects = allPrettyProjects;
 	}
 
@@ -51,4 +54,5 @@ public class PrettyProduct {
 		String jsonString = gson.toJson(this);
 		return jsonString;
 	}
+	
 }

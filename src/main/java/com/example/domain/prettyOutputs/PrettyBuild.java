@@ -40,10 +40,13 @@ public class PrettyBuild {
 		this.buildURL = build.getBuildURL();
 		this.projectId = build.getProject().getProjectId();
 		List<PrettyTestCase> allPrettyTestCases = new ArrayList<PrettyTestCase>();
-		for (TestCase testCase : build.getTestCases()) {
-			PrettyTestCase prettyTestCase = new PrettyTestCase(testCase);
-			allPrettyTestCases.add(prettyTestCase);
+		if(build.getTestCases() != null) {
+			for (TestCase testCase : build.getTestCases()) {
+				PrettyTestCase prettyTestCase = new PrettyTestCase(testCase);
+				allPrettyTestCases.add(prettyTestCase);
+			}
 		}
+		
 		this.testCases = allPrettyTestCases;
 	}
 

@@ -13,10 +13,13 @@ public class ProductsOutput {
 	public ProductsOutput(List<Product> products) {
 		super();
 		List<PrettyProduct> allPrettyProducts = new ArrayList<PrettyProduct>();
-		for (Product product : products) {
-			PrettyProduct prettyProduct = new PrettyProduct(product);
-			allPrettyProducts.add(prettyProduct);
+		if (products != null) {
+			for (Product product : products) {
+				PrettyProduct prettyProduct = new PrettyProduct(product);
+				allPrettyProducts.add(prettyProduct);
+			}
 		}
+		
 		this.products = allPrettyProducts;
 	}
 

@@ -13,6 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Version;
 
+import com.example.domain.prettyOutputs.PrettyBuild;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
@@ -23,7 +24,6 @@ public class Build implements java.io.Serializable {
 	private static final long serialVersionUID = 7884292690096443611L;
 
 	@Id
-	@Expose
 	private @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(updatable = false, nullable = false)
 	Long buildId;
@@ -33,15 +33,12 @@ public class Build implements java.io.Serializable {
 	int version = 0;
 
 	@Column
-	@Expose
 	private String codePath;
 
 	@Column
-	@Expose
 	private String buildURL;
 
 	@OneToMany(mappedBy="build")
-	@Expose
 	private List<TestCase> testCases;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
@@ -95,8 +92,9 @@ public class Build implements java.io.Serializable {
 	}
 
 	public String toString() {
-		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
-		String jsonString = gson.toJson(this);
+		PrettyBuild prettyBuild = new PrettyBuild(this);
+		Gson gson = new Gson();
+		String jsonString = gson.toJson(prettyBuild);
 		return jsonString;
 	}
 }

@@ -16,6 +16,16 @@ public class GetterTest {
 	}
 	
 	@Test
+	public void getSpecificProductTest() throws Exception {
+		long productId = 1;
+		String targetURL = "http://localhost:8080/ssot-webservice-1.0.0-SNAPSHOT/rest/webService/products/" + productId;
+		String response = TestUtils.sendGet(targetURL);
+		System.out.println("SPECIFIC PRODUCT:");
+		System.out.println(response);
+		System.out.println("\n\n");
+	}
+	
+	@Test
 	public void getProjectsTest() throws Exception {
 		String targetURL = "http://localhost:8080/ssot-webservice-1.0.0-SNAPSHOT/rest/webService/projects";
 		String response = TestUtils.sendGet(targetURL);

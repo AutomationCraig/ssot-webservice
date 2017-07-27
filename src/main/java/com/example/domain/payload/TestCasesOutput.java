@@ -13,10 +13,13 @@ public class TestCasesOutput {
 	public TestCasesOutput(List<TestCase> testCases) {
 		super();
 		List<PrettyTestCase> allPrettyTests = new ArrayList<PrettyTestCase>();
-		for (TestCase testCase : testCases) {
-			PrettyTestCase prettyTestCase = new PrettyTestCase(testCase);
-			allPrettyTests.add(prettyTestCase);
+		if (testCases != null) {
+			for (TestCase testCase : testCases) {
+				PrettyTestCase prettyTestCase = new PrettyTestCase(testCase);
+				allPrettyTests.add(prettyTestCase);
+			}
 		}
+		
 		this.testCases = allPrettyTests;
 	}
 
