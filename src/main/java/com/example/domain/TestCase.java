@@ -12,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Version;
 
+import com.example.domain.prettyOutputs.PrettyTestCase;
 import com.example.domain.utils.RunStatus;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -61,7 +62,7 @@ public class TestCase implements java.io.Serializable {
 	public TestCase() {
 	}
 
-	public Long getId() {
+	public Long getTestCaseId() {
 		return testCaseId;
 	}
 
@@ -117,7 +118,7 @@ public class TestCase implements java.io.Serializable {
 	
 	public String toString() {
 		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
-		TestCaseWithProjectID prettyTest = new TestCaseWithProjectID(this);
+		PrettyTestCase prettyTest = new PrettyTestCase(this);
 		String jsonString = gson.toJson(prettyTest);
 		return jsonString;
 	}

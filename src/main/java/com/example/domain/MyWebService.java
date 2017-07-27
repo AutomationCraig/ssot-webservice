@@ -1,5 +1,6 @@
 package com.example.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateful;
@@ -15,7 +16,12 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
+import com.example.domain.payload.BuildsOutput;
 import com.example.domain.payload.NewBuildPayload;
+import com.example.domain.payload.ProductsOutput;
+import com.example.domain.payload.ProjectsOutput;
+import com.example.domain.payload.TestCasesOutput;
+import com.example.domain.prettyOutputs.PrettyTestCase;
 import com.example.domain.utils.DBSearch;
 import com.google.gson.Gson;
 
@@ -44,7 +50,7 @@ public class MyWebService {
 	 */
 	@GET
 	@Path("/products")
-	@Produces("text/xml")
+	@Produces("application/json")
 	public String getAllProducts() {
 		System.out.println("GET on All Products");
 
@@ -52,14 +58,10 @@ public class MyWebService {
 				Product.class);
 		List<Product> result = query.getResultList();
 		System.out.println("There are [" + result.size() + "] products.");
-		String allProjects = "<html><body>All products [" + result.size() + "]:<br/>";
-		if(result.size() > 0) {
-			for (Product product : result) {
-				System.out.println(product);
-				allProjects+="<br/>" + product.toString();
-			}
-		}
-		return  allProjects;
+
+		ProductsOutput output = new ProductsOutput(result);
+		Gson gson = new Gson();
+		return gson.toJson(output);
 	}
 
 	/** Returns a list of all projects in the DB
@@ -68,7 +70,7 @@ public class MyWebService {
 	 */
 	@GET
 	@Path("/projects")
-	@Produces("text/xml")
+	@Produces("application/json")
 	public String getAllProjects() {
 		System.out.println("GET on All Projects");
 
@@ -76,14 +78,10 @@ public class MyWebService {
 				Project.class);
 		List<Project> result = query.getResultList();
 		System.out.println("There are [" + result.size() + "] projects.");
-		String allProjects = "<html><body>All project [" + result.size() + "]:<br/>";
-		if(result.size() > 0) {
-			for (Project project : result) {
-				System.out.println(project);
-				allProjects+="<br/>" + project.toString();
-			}
-		}
-		return  allProjects;
+
+		ProjectsOutput output = new ProjectsOutput(result);
+		Gson gson = new Gson();
+		return gson.toJson(output);
 	}
 	
 	/** Returns a list of all project Runs in the DB
@@ -92,7 +90,7 @@ public class MyWebService {
 	 */
 	@GET
 	@Path("/builds")
-	@Produces("text/xml")
+	@Produces("application/json")
 	public String getAllBuilds() {
 		System.out.println("GET on All Builds");
 
@@ -100,14 +98,10 @@ public class MyWebService {
 				Build.class);
 		List<Build> result = query.getResultList();
 		System.out.println("There are [" + result.size() + "] builds.");
-		String allBuilds = "<html><body>All builds [" + result.size() + "]:<br/>";
-		if(result.size() > 0) {
-			for (Build projectRun : result) {
-				System.out.println(projectRun);
-				allBuilds+="<br/>" + projectRun.toString();
-			}
-		}
-		return  allBuilds;
+
+		BuildsOutput output = new BuildsOutput(result);
+		Gson gson = new Gson();
+		return gson.toJson(output);
 	}
 	
 	/** Returns a list of all test cases in the DB
@@ -116,7 +110,7 @@ public class MyWebService {
 	 */
 	@GET
 	@Path("/testCases")
-	@Produces("text/xml")
+	@Produces("application/json")
 	public String getAllTestCaseRuns() {
 		System.out.println("GET on All Test Cases");
 
@@ -124,15 +118,10 @@ public class MyWebService {
 				TestCase.class);
 		List<TestCase> result = query.getResultList();
 		System.out.println("There are [" + result.size() + "] tests.");
-		String allTests = "<html><body>All tests [" + result.size() + "]:<br/>";
-		if(result.size() > 0) {
-			for (TestCase testCase : result) {
-				TestCaseWithProjectID prettyTest = new TestCaseWithProjectID(testCase);
-				System.out.println(prettyTest);
-				allTests+="<br/>" + prettyTest.toString();
-			}
-		}
-		return  allTests;
+		
+		TestCasesOutput output = new TestCasesOutput(result);
+		Gson gson = new Gson();
+		return gson.toJson(output);
 	}
 	
 	
