@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.example.domain.Product;
-import com.example.domain.prettyOutputs.PrettyProduct;
+import com.example.domain.prettyOutputs.PrettyProductOnly;
 
 public class ProductsOutput {
 	
-	private List<PrettyProduct> products;
+	private List<PrettyProductOnly> products;
 	
 	public ProductsOutput(List<Product> products) {
 		super();
-		List<PrettyProduct> allPrettyProducts = new ArrayList<PrettyProduct>();
+		List<PrettyProductOnly> allPrettyProducts = new ArrayList<PrettyProductOnly>();
 		if (products != null) {
 			for (Product product : products) {
-				PrettyProduct prettyProduct = new PrettyProduct(product);
+				PrettyProductOnly prettyProduct = new PrettyProductOnly(product);
 				allPrettyProducts.add(prettyProduct);
 			}
 		}
@@ -24,7 +24,7 @@ public class ProductsOutput {
 	}
 
 
-	public List<PrettyProduct> getProjects() {
+	public List<PrettyProductOnly> getProjects() {
 		return products;
 	}
 

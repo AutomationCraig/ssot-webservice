@@ -27,6 +27,18 @@ public class CreatingObjectsTest {
 	}
 	
 	@Test
+	public void createProductTest2() {
+		String baseContext = "http://localhost:8080/ssot-webservice-1.0.0-SNAPSHOT/";
+		String targetURL = baseContext + "rest/webService/addProduct/NextmyProductName";
+		
+		String JSONInput = "";
+		
+		String response = TestUtils.doPOST(targetURL, JSONInput);
+		System.out.println("Result of Test:");
+		System.out.println(response);
+	}
+	
+	@Test
 	public void createProjectTest() {
 		String baseContext = "http://localhost:8080/ssot-webservice-1.0.0-SNAPSHOT/";
 		String targetURL = baseContext + "rest/webService/addProject/myProductName/myProjectName";
