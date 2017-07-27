@@ -18,7 +18,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
 
 @Entity
-public class TestCaseRun implements java.io.Serializable {
+public class TestCase implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -46,19 +46,19 @@ public class TestCaseRun implements java.io.Serializable {
 	private Date timestamp;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="projectRunId")
-	private ProjectRun projectRun;
+	@JoinColumn(name="buildId")
+	private Build build;
 
 
 	
-	public TestCaseRun(String description, RunStatus runStatus, Date timestamp) {
+	public TestCase(String description, RunStatus runStatus, Date timestamp) {
 		super();
 		this.description = description;
 		this.runStatus = runStatus;
 		this.timestamp = timestamp;
 	}
 
-	public TestCaseRun() {
+	public TestCase() {
 	}
 
 	public Long getId() {
@@ -86,11 +86,11 @@ public class TestCaseRun implements java.io.Serializable {
 		this.timestamp = timestamp;
 	}
 	
-	public ProjectRun getProjectRun() {
-		return projectRun;
+	public Build getBuild() {
+		return build;
 	}
-	public void setProjectRun(ProjectRun project) {
-		this.projectRun = project;
+	public void setBuild(Build project) {
+		this.build = project;
 	}
 
 	
@@ -102,14 +102,14 @@ public class TestCaseRun implements java.io.Serializable {
 		if (that == null) {
 			return false;
 		}
-		if (!(that instanceof TestCaseRun)) {
+		if (!(that instanceof TestCase)) {
 			return false;
 		}
-		TestCaseRun other = (TestCaseRun) that;
+		TestCase other = (TestCase) that;
 		if (this.description.equals(other.description) &&
 			(this.runStatus == other.runStatus) &&
 			(this.timestamp.equals(other.timestamp)) &&
-			(this.projectRun.equals(other.projectRun))){
+			(this.build.equals(other.build))){
 			return true;
 		}
 		return false;
@@ -117,7 +117,7 @@ public class TestCaseRun implements java.io.Serializable {
 	
 	public String toString() {
 		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
-		TestCaseRunWithProjectID prettyTest = new TestCaseRunWithProjectID(this);
+		TestCaseWithProjectID prettyTest = new TestCaseWithProjectID(this);
 		String jsonString = gson.toJson(prettyTest);
 		return jsonString;
 	}

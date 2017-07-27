@@ -62,6 +62,7 @@ public class Product implements java.io.Serializable {
 	public void setProjects(List<Project> projects) {
 		this.projects = projects;
 	}
+	
 
 	public Long getProdcutId() {
 		return prodcutId;

@@ -7,7 +7,7 @@ import javax.persistence.TypedQuery;
 
 import com.example.domain.Product;
 import com.example.domain.Project;
-import com.example.domain.ProjectRun;
+import com.example.domain.Build;
 
 public class DBSearch {
 	
@@ -131,17 +131,57 @@ public class DBSearch {
 			return returnProject;
 		}
 	}// getProjectByName
-
-	public ProjectRun getProjecRuntByProjectNameAndFirstTestID(EntityManager em, String projectName, Long id) {
-		ProjectRun returnProjectRun = null;
+	
+	/** Return a Project object if ID matched to 1 and only 1.
+	 * If no ID match is found, or multiple matches are found, we return null.
+	 * @param em
+	 * @param codePath
+	 * @return
+	 */
+	public Project getProjectByID(EntityManager em, long id) {
+		Project returnProject = null;
 		try {
 
-			TypedQuery<ProjectRun> query = em.createQuery(
+			TypedQuery<Project> query = em.createQuery(
+					"from Project p where p.projectId = ?",
+					Project.class);
+			query.setParameter(1, id);
+			List<Project> result = query.getResultList();
+			if (result.isEmpty()) {
+				return returnProject;
+			} else {
+				if (result.size() > 1) {
+					System.err
+							.println("ERROR: We have ["
+									+ result.size()
+									+ "] Projects that have the id of ["
+									+ id
+									+ "]. This should not happen.  Returning null");
+					return returnProject;
+				} else {
+					// We returned 1 and only 1 User from the query
+					returnProject = result.get(0);
+					return returnProject;
+				}
+			}
+		} catch (Exception e) {
+			System.out
+					.println("Encountered error in getProjectByName function : "
+							+ e);
+			return returnProject;
+		}
+	}// getProjectByName
+
+	public Build getProjecRuntByProjectNameAndFirstTestID(EntityManager em, String projectName, Long id) {
+		Build returnProjectRun = null;
+		try {
+
+			TypedQuery<Build> query = em.createQuery(
 					"from ProjectRun p where p.project.projectName = ? and p.testCaseRuns.testCaseId = ?",
-					ProjectRun.class);
+					Build.class);
 			query.setParameter(1, projectName);
 			query.setParameter(1, id);
-			List<ProjectRun> result = query.getResultList();
+			List<Build> result = query.getResultList();
 			if (result.isEmpty()) {
 				return returnProjectRun;
 			} else {

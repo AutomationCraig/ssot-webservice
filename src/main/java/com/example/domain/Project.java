@@ -42,7 +42,7 @@ public class Project implements java.io.Serializable {
 	
 	@OneToMany(mappedBy="project")
 	@Expose
-	private List<ProjectRun> projectRuns;
+	private List<Build> projectRuns;
 
 	
 	
@@ -63,10 +63,10 @@ public class Project implements java.io.Serializable {
 		this.projectName = projectName;
 	}
 	
-	public List<ProjectRun> getProjectRuns() {
+	public List<Build> getProjectRuns() {
 		return projectRuns;
 	}
-	public void setProjectRuns(List<ProjectRun> projectRuns) {
+	public void setProjectRuns(List<Build> projectRuns) {
 		this.projectRuns = projectRuns;
 	}
 

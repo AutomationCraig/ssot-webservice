@@ -2,8 +2,14 @@ package com.example.domain;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 import com.example.domain.utils.RunStatus;
 import com.google.gson.Gson;
+import com.google.gson.annotations.Expose;
 
 /**
  * This class is for printing out pretty versions of the TestCase class
@@ -13,23 +19,22 @@ import com.google.gson.Gson;
  * @author chrmbook
  *
  */
-public class TestCaseRunWithProjectID {
+public class TestCaseWithProjectID {
 
 
-	Long testCaseId = null;
 	private String description;
 	private RunStatus runStatus;
 	private Date timestamp;
-	private long projectRunID;
+	private long buildId;
 
 
 	
-	public TestCaseRunWithProjectID(TestCaseRun testCase) {
+	public TestCaseWithProjectID(TestCase testCase) {
 		super();
 		this.description = testCase.getDescription();
 		this.runStatus = testCase.getRunStatus();
 		this.timestamp = testCase.getTimestamp();
-		this.projectRunID = testCase.getProjectRun().getProjectRunId();
+		this.buildId = testCase.getBuild().getBuildId();
 	}
 
 	

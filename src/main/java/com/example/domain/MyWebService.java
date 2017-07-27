@@ -1,6 +1,5 @@
 package com.example.domain;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.ejb.Stateful;
@@ -16,7 +15,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 
-import com.example.domain.utils.Constants;
+import com.example.domain.payload.NewBuildPayload;
 import com.example.domain.utils.DBSearch;
 import com.google.gson.Gson;
 
@@ -44,7 +43,7 @@ public class MyWebService {
 	 * @return
 	 */
 	@GET
-	@Path("/AllProducts")
+	@Path("/products")
 	@Produces("text/xml")
 	public String getAllProducts() {
 		System.out.println("GET on All Products");
@@ -68,7 +67,7 @@ public class MyWebService {
 	 * @return
 	 */
 	@GET
-	@Path("/AllProjects")
+	@Path("/projects")
 	@Produces("text/xml")
 	public String getAllProjects() {
 		System.out.println("GET on All Projects");
@@ -92,23 +91,23 @@ public class MyWebService {
 	 * @return
 	 */
 	@GET
-	@Path("/AllProjectRuns")
+	@Path("/builds")
 	@Produces("text/xml")
-	public String getAllProjectRuns() {
-		System.out.println("GET on All ProjectRuns");
+	public String getAllBuilds() {
+		System.out.println("GET on All Builds");
 
-		TypedQuery<ProjectRun> query = em.createQuery("from ProjectRun p ",
-				ProjectRun.class);
-		List<ProjectRun> result = query.getResultList();
-		System.out.println("There are [" + result.size() + "] projectRuns.");
-		String allProjects = "<html><body>All projectRuns [" + result.size() + "]:<br/>";
+		TypedQuery<Build> query = em.createQuery("from Build b ",
+				Build.class);
+		List<Build> result = query.getResultList();
+		System.out.println("There are [" + result.size() + "] builds.");
+		String allBuilds = "<html><body>All builds [" + result.size() + "]:<br/>";
 		if(result.size() > 0) {
-			for (ProjectRun projectRun : result) {
+			for (Build projectRun : result) {
 				System.out.println(projectRun);
-				allProjects+="<br/>" + projectRun.toString();
+				allBuilds+="<br/>" + projectRun.toString();
 			}
 		}
-		return  allProjects;
+		return  allBuilds;
 	}
 	
 	/** Returns a list of all test cases in the DB
@@ -116,19 +115,19 @@ public class MyWebService {
 	 * @return
 	 */
 	@GET
-	@Path("/AllTestCaseRuns")
+	@Path("/testCases")
 	@Produces("text/xml")
 	public String getAllTestCaseRuns() {
-		System.out.println("GET on All Test Case Runs");
+		System.out.println("GET on All Test Cases");
 
-		TypedQuery<TestCaseRun> query = em.createQuery("from TestCaseRun t ",
-				TestCaseRun.class);
-		List<TestCaseRun> result = query.getResultList();
+		TypedQuery<TestCase> query = em.createQuery("from TestCase t ",
+				TestCase.class);
+		List<TestCase> result = query.getResultList();
 		System.out.println("There are [" + result.size() + "] tests.");
 		String allTests = "<html><body>All tests [" + result.size() + "]:<br/>";
 		if(result.size() > 0) {
-			for (TestCaseRun testCase : result) {
-				TestCaseRunWithProjectID prettyTest = new TestCaseRunWithProjectID(testCase);
+			for (TestCase testCase : result) {
+				TestCaseWithProjectID prettyTest = new TestCaseWithProjectID(testCase);
 				System.out.println(prettyTest);
 				allTests+="<br/>" + prettyTest.toString();
 			}
@@ -148,7 +147,7 @@ public class MyWebService {
 	/* Returns a Product object, either newly created, or the one already in the
 	/* system matching name. **/
 	@POST
-	@Path("/ProductRequest/{name}")
+	@Path("/addProduct/{name}")
 	@Consumes("application/json")
 	public String productPOSTRequest(@PathParam("name") String name) {
 
@@ -171,13 +170,13 @@ public class MyWebService {
 		}
 
 		return foundProduct.toString();
-	}// productPOSTRequest
+	}// addProduct
 	
 	/** Creates a new Project if that product name does not already exist
 	/* Returns a Project object, either newly created, or the one already in the
 	/* system matching name. **/
 	@POST
-	@Path("/ProjectRequest/{productName}/{projectName}")
+	@Path("/addProject/{productName}/{projectName}")
 	@Consumes("application/json")
 	public String projectPOSTRequest(@PathParam("productName") String productName, @PathParam("projectName") String projectName) {
 
@@ -207,59 +206,49 @@ public class MyWebService {
 		}
 
 		return foundProject.toString();
-	}// projectPOSTRequest
+	}// addProject
 
 
 	/** Creates a new Project if that project projectName does not already exist
 	/* Returns a Project object, either newly created, or the one already in the
 	/* system matching projectName. **/
 	@POST
-	@Path("/ProjectRunRequest/{projectName}/{codePath}/{buildURL}")
+	@Path("/addBuild")
 	@Consumes("application/json")
-	public String projectRunPOSTRequest(@PathParam("projectName") String projectName, @PathParam("codePath") String codePath,
-			@PathParam("buildURL") String buildURL, String JsonInput) {
+	public String buildPOSTRequest(String JsonInput) {
 
-		Project project = dbSearch.getProjectByName(em, projectName);
+		Gson gson = new Gson();
+		NewBuildPayload payload = gson.fromJson(JsonInput, NewBuildPayload.class);
+		
+		Project project = dbSearch.getProjectByName(em, payload.getProjectName());
 		if(project == null) {
 			System.out.println("We can't add a project Run if the project doesn't exist");
 			return "We can't add a project Run if the project doesn't exist";
 		}
 		
-		ProjectRun projectRun  = new ProjectRun();
-		projectRun.setProject(project);
-		projectRun.setBuildURL(buildURL);
-		projectRun.setCodePath(codePath);
-		ArrayList<TestCaseRun> tests = getTestCasesFromJsonInput(JsonInput, projectRun);
-		projectRun.setTestCaseRuns(tests);
+		Build build  = new Build();
+		build.setProject(project);
+		build.setBuildURL(payload.getBuildURL());
+		build.setCodePath(payload.getCodePath());
+		build.setTestCases(payload.getTestCases());
 		
 
-		System.out.println("POST on a ProjecRuntRequest for projectName: [" + projectName + "]");
-		System.out.println("NEW PROJECT RUN.");
+		System.out.println("POST on a BuildRequest for projectName: [" + project.getProjectName() + "]");
+		System.out.println("NEW BUILD.");
 		
 		//Must save off Each test case, and then the new TestSuite first
-		for (TestCaseRun testCase : tests) {
+		for (TestCase testCase : payload.getTestCases()) {
+			testCase.setBuild(build);
 			em.persist(testCase);
 			em.flush();
 		}
-		em.persist(projectRun);
+		em.persist(build);
 		em.flush();
 
-		return projectRun.toString();
-	}// projectRunPOSTRequest
+		return build.toString();
+	}// addBuild
 
 
-	private ArrayList<TestCaseRun> getTestCasesFromJsonInput(String JsonInput, ProjectRun project) {
-		Gson gson = new Gson();
-		String[] testJsons = JsonInput.split(Constants.ARRAY_SPLIT_VALUE);
-		ArrayList<TestCaseRun> tests = new ArrayList<TestCaseRun>();
-		for (String test : testJsons) {
-			TestCaseRun testCase = gson.fromJson(test, TestCaseRun.class);
-			testCase.setProjectRun(project);
-			tests.add(testCase);
-		}
-		return tests;
-	}
-	
 	
 
 //	/**
