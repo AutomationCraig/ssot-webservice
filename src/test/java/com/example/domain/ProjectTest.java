@@ -6,6 +6,8 @@ import java.util.Date;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.example.domain.utils.RunStatus;
+
 //@RunWith(Arquillian.class)
 public class ProjectTest {
 //    @Inject private MyWebService myWebService;
@@ -27,9 +29,9 @@ public class ProjectTest {
     
     @Test
     public void projectToStringTest() {
-    	TestCase test1 = new TestCase("Desc 1", true, new Date());
-    	TestCase test2 = new TestCase("Desc 2", false, new Date());
-    	Project project = new Project("svn path", "jenkins url", Arrays.asList(test1, test2));
+    	TestCaseRun test1 = new TestCaseRun("Desc 1", RunStatus.PASSED, new Date());
+    	TestCaseRun test2 = new TestCaseRun("Desc 2", RunStatus.FAILED, new Date());
+    	ProjectRun project = new ProjectRun("svn path", "jenkins url", Arrays.asList(test1, test2));
     	System.out.println(project);
     	Assert.assertTrue(true);
     }

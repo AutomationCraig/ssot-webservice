@@ -12,12 +12,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Version;
 
+import com.example.domain.utils.RunStatus;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.annotations.Expose;
 
 @Entity
-public class TestCase implements java.io.Serializable {
+public class TestCaseRun implements java.io.Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -38,26 +39,26 @@ public class TestCase implements java.io.Serializable {
 
 	@Column
 	@Expose
-	private boolean isPassingStatus;
+	private RunStatus runStatus;
 
 	@Column
 	@Expose
 	private Date timestamp;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="id")
-	private Project project;
+	@JoinColumn(name="projectRunId")
+	private ProjectRun projectRun;
 
 
 	
-	public TestCase(String description, boolean isPassingStatus, Date timestamp) {
+	public TestCaseRun(String description, RunStatus runStatus, Date timestamp) {
 		super();
 		this.description = description;
-		this.isPassingStatus = isPassingStatus;
+		this.runStatus = runStatus;
 		this.timestamp = timestamp;
 	}
 
-	public TestCase() {
+	public TestCaseRun() {
 	}
 
 	public Long getId() {
@@ -71,11 +72,11 @@ public class TestCase implements java.io.Serializable {
 		this.description = description;
 	}
 
-	public boolean isPassingStatus() {
-		return isPassingStatus;
+	public RunStatus getRunStatus() {
+		return runStatus;
 	}
-	public void setPassingStatus(boolean isPassingStatus) {
-		this.isPassingStatus = isPassingStatus;
+	public void setRunStatus(RunStatus runStatus) {
+		this.runStatus = runStatus;
 	}
 
 	public Date getTimestamp() {
@@ -85,11 +86,11 @@ public class TestCase implements java.io.Serializable {
 		this.timestamp = timestamp;
 	}
 	
-	public Project getProject() {
-		return project;
+	public ProjectRun getProjectRun() {
+		return projectRun;
 	}
-	public void setProject(Project project) {
-		this.project = project;
+	public void setProjectRun(ProjectRun project) {
+		this.projectRun = project;
 	}
 
 	
@@ -101,14 +102,14 @@ public class TestCase implements java.io.Serializable {
 		if (that == null) {
 			return false;
 		}
-		if (!(that instanceof TestCase)) {
+		if (!(that instanceof TestCaseRun)) {
 			return false;
 		}
-		TestCase other = (TestCase) that;
+		TestCaseRun other = (TestCaseRun) that;
 		if (this.description.equals(other.description) &&
-			(this.isPassingStatus == other.isPassingStatus) &&
+			(this.runStatus == other.runStatus) &&
 			(this.timestamp.equals(other.timestamp)) &&
-			(this.project.equals(other.project))){
+			(this.projectRun.equals(other.projectRun))){
 			return true;
 		}
 		return false;
@@ -116,7 +117,8 @@ public class TestCase implements java.io.Serializable {
 	
 	public String toString() {
 		Gson gson = new GsonBuilder().excludeFieldsWithoutExposeAnnotation().setPrettyPrinting().create();
-		String jsonString = gson.toJson(this);
+		TestCaseRunWithProjectID prettyTest = new TestCaseRunWithProjectID(this);
+		String jsonString = gson.toJson(prettyTest);
 		return jsonString;
 	}
 }

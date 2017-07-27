@@ -2,6 +2,7 @@ package com.example.domain;
 
 import java.util.Date;
 
+import com.example.domain.utils.RunStatus;
 import com.google.gson.Gson;
 
 /**
@@ -12,23 +13,23 @@ import com.google.gson.Gson;
  * @author chrmbook
  *
  */
-public class TestCaseWithProjectID {
+public class TestCaseRunWithProjectID {
 
 
 	Long testCaseId = null;
 	private String description;
-	private boolean isPassingStatus;
+	private RunStatus runStatus;
 	private Date timestamp;
-	private long projectID;
+	private long projectRunID;
 
 
 	
-	public TestCaseWithProjectID(TestCase testCase) {
+	public TestCaseRunWithProjectID(TestCaseRun testCase) {
 		super();
 		this.description = testCase.getDescription();
-		this.isPassingStatus = testCase.isPassingStatus();
+		this.runStatus = testCase.getRunStatus();
 		this.timestamp = testCase.getTimestamp();
-		this.projectID = testCase.getProject().getId();
+		this.projectRunID = testCase.getProjectRun().getProjectRunId();
 	}
 
 	
