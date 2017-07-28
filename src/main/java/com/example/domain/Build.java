@@ -15,8 +15,6 @@ import javax.persistence.Version;
 
 import com.example.domain.prettyOutputs.PrettyBuild;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.annotations.Expose;
 
 @Entity
 public class Build implements java.io.Serializable {
@@ -33,9 +31,6 @@ public class Build implements java.io.Serializable {
 	int version = 0;
 
 	@Column
-	private String codePath;
-
-	@Column
 	private String buildURL;
 
 	@OneToMany(mappedBy="build")
@@ -47,9 +42,8 @@ public class Build implements java.io.Serializable {
 
 	
 	
-	public Build(String codePath, String buildURL, List<TestCase> testCases) {
+	public Build(String buildURL, List<TestCase> testCases) {
 		super();
-		this.codePath = codePath;
 		this.buildURL = buildURL;
 		this.testCases = testCases;
 	}
@@ -64,13 +58,6 @@ public class Build implements java.io.Serializable {
 	}
 	public void setTestCases(List<TestCase> testCases) {
 		this.testCases = testCases;
-	}
-
-	public String getCodePath() {
-		return codePath;
-	}
-	public void setCodePath(String codePath) {
-		this.codePath = codePath;
 	}
 
 	public String getBuildURL() {

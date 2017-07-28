@@ -28,7 +28,6 @@ public class PrettyBuild {
 
 
 	private Long buildId;
-	private String codePath;
 	private String buildURL;
 	private List<PrettyTestCase> testCases;
 	private Long projectId;
@@ -36,7 +35,6 @@ public class PrettyBuild {
 	public PrettyBuild(Build build) {
 		super();
 		this.buildId = build.getBuildId();
-		this.codePath = build.getCodePath();
 		this.buildURL = build.getBuildURL();
 		this.projectId = build.getProject().getProjectId();
 		List<PrettyTestCase> allPrettyTestCases = new ArrayList<PrettyTestCase>();
@@ -52,9 +50,6 @@ public class PrettyBuild {
 
 	public Long getBuildId() {
 		return buildId;
-	}
-	public String getCodePath() {
-		return codePath;
 	}
 	public String getBuildURL() {
 		return buildURL;

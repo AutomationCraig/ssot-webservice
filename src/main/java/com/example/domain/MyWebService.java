@@ -259,7 +259,6 @@ public class MyWebService {
 		Build build  = new Build();
 		build.setProject(project);
 		build.setBuildURL(payload.getBuildURL());
-		build.setCodePath(payload.getCodePath());
 		build.setTestCases(payload.getTestCases());
 		
 

@@ -29,9 +29,9 @@ public class ProjectTest {
     
     @Test
     public void projectToStringTest() {
-    	TestCase test1 = new TestCase("Desc 1", RunStatus.PASSED, new Date());
-    	TestCase test2 = new TestCase("Desc 2", RunStatus.FAILED, new Date());
-    	Build project = new Build("svn path", "jenkins url", Arrays.asList(test1, test2));
+    	TestCase test1 = new TestCase("Desc 1", RunStatus.PASSED, this.getClass().toString(), new Date());
+    	TestCase test2 = new TestCase("Desc 2", RunStatus.FAILED, this.getClass().toString(), new Date());
+    	Build project = new Build("jenkins url", Arrays.asList(test1, test2));
     	System.out.println(project);
     	Assert.assertTrue(true);
     }

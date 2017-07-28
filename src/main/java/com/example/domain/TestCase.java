@@ -15,12 +15,16 @@ import javax.persistence.Version;
 import com.example.domain.prettyOutputs.PrettyTestCase;
 import com.example.domain.utils.RunStatus;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.annotations.Expose;
+
+import cucumber.features.pojos.Element;
+import cucumber.features.pojos.Feature;
+import cucumber.features.pojos.Step;
 
 @Entity
 public class TestCase implements java.io.Serializable {
 
+	private final static String STATUS_TO_CHECK_FOR = "failed";
+	
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -33,11 +37,14 @@ public class TestCase implements java.io.Serializable {
 	int version = 0;
 
 
-	@Column
+	@Column(length=1000000)
 	private String description;
 
 	@Column
 	private RunStatus runStatus;
+	
+	@Column
+	private String location;
 
 	@Column
 	private Date timestamp;
@@ -48,13 +55,47 @@ public class TestCase implements java.io.Serializable {
 
 
 	
-	public TestCase(String description, RunStatus runStatus, Date timestamp) {
+	public TestCase(String description, RunStatus runStatus, String location, Date timestamp) {
 		super();
 		this.description = description;
 		this.runStatus = runStatus;
 		this.timestamp = timestamp;
+		this.location = location;
+	}
+	
+	public TestCase(Feature feature) {
+		this.timestamp = new Date();
+		this.location = feature.getUri();
+		this.runStatus = areAllStatusesPassing(feature);
+		this.description = getDescriptionFromFeature(feature);
 	}
 
+
+	public RunStatus areAllStatusesPassing(Feature feature) {
+		for (Element element : feature.getElements()) {
+			for (Step step : element.getSteps()) {
+				if(step.getResult().equals(STATUS_TO_CHECK_FOR)) {
+					return RunStatus.FAILED;
+				}
+			}
+		}
+		return RunStatus.PASSED;
+	}
+	
+
+	private String getDescriptionFromFeature(Feature feature) {
+		String description = feature.getKeyword() + "\n" + feature.getDescription() + "\n" + feature.getName();
+		for ( Element element : feature.getElements()) {
+			description += "\n\n" + element.getDescription() + "\n" + element.getName();
+			for (Step step : element.getSteps()) {
+				description += "\n\n" + step.getKeyword() + step.getName();
+			}
+		}
+		return description;
+	}
+
+	
+	
 	public TestCase() {
 	}
 
@@ -89,6 +130,13 @@ public class TestCase implements java.io.Serializable {
 	public void setBuild(Build project) {
 		this.build = project;
 	}
+	
+	public String getLocation() {
+		return location;
+	}
+	public void setLocation(String location) {
+		this.location = location;
+	}
 
 	
 	@Override
@@ -106,7 +154,8 @@ public class TestCase implements java.io.Serializable {
 		if (this.description.equals(other.description) &&
 			(this.runStatus == other.runStatus) &&
 			(this.timestamp.equals(other.timestamp)) &&
-			(this.build.equals(other.build))){
+			(this.build.equals(other.build)) &&
+			(this.location.equals(other.location))){
 			return true;
 		}
 		return false;

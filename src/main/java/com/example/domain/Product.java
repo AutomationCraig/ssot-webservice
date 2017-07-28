@@ -12,8 +12,6 @@ import javax.persistence.Version;
 
 import com.example.domain.prettyOutputs.PrettyProduct;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.annotations.Expose;
 
 @Entity
 public class Product implements java.io.Serializable {

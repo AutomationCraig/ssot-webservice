@@ -26,6 +26,7 @@ public class PrettyTestCase {
 	private Long testCaseId;
 	private String description;
 	private RunStatus runStatus;
+	private String location;
 	private Date timestamp;
 	private long buildId;
 
@@ -37,6 +38,7 @@ public class PrettyTestCase {
 		this.description = testCase.getDescription();
 		this.runStatus = testCase.getRunStatus();
 		this.timestamp = testCase.getTimestamp();
+		this.location = testCase.getLocation();
 		this.buildId = testCase.getBuild().getBuildId();
 	}
 
@@ -55,6 +57,9 @@ public class PrettyTestCase {
 	}
 	public long getBuildId() {
 		return buildId;
+	}
+	public String getLocation() {
+		return location;
 	}
 
 
