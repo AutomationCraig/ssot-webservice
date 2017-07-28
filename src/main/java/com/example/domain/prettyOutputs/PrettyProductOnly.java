@@ -9,7 +9,7 @@ public class PrettyProductOnly {
 	private String productName;
 	
 	public PrettyProductOnly(Product product) {
-		this.productId = product.getProdcutId();
+		this.productId = product.getProductId();
 		this.productName = product.getProductName();
 	}
 	

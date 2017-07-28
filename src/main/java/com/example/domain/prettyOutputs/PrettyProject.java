@@ -26,7 +26,7 @@ public class PrettyProject {
 		super();
 		this.projectId = project.getProjectId();
 		this.projectName = project.getProjectName();
-		this.productId = project.getProduct().getProdcutId();
+		this.productId = project.getProduct().getProductId();
 		List<PrettyBuild> allPrettyBuilds = new ArrayList<PrettyBuild>();
 		if (project.getBuilds() != null) {
 			for (Build build : project.getBuilds()) {

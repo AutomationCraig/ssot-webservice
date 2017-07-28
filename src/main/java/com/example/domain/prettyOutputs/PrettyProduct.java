@@ -17,7 +17,7 @@ import com.google.gson.Gson;
  */
 public class PrettyProduct {
 
-	private Long prodcutId;
+	private Long productId;
 	private String productName;
 	private List<ProjectProperties> projectProperties;
 
@@ -25,7 +25,7 @@ public class PrettyProduct {
 
 	public PrettyProduct(Product product) {
 		super();
-		this.prodcutId = product.getProdcutId();
+		this.productId = product.getProductId();
 		this.productName = product.getProductName();
 		List<ProjectProperties> allProjectProperties = new ArrayList<ProjectProperties>();
 		if(product.getProjects() != null) {
@@ -38,8 +38,8 @@ public class PrettyProduct {
 	}
 
 
-	public Long getProdcutId() {
-		return prodcutId;
+	public Long getProductId() {
+		return productId;
 	}
 	public String getProductName() {
 		return productName;

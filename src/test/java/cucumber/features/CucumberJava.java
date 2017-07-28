@@ -61,7 +61,7 @@ public class CucumberJava {
 	    Gson gson = new Gson();
 	    PrettyProduct product = gson.fromJson(restResponse, PrettyProduct.class);
 	    Assert.assertNotNull(product);
-	    Assert.assertEquals(Long.valueOf(id), product.getProdcutId());
+	    Assert.assertEquals(Long.valueOf(id), product.getProductId());
 	}
 	
 }

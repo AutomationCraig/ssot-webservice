@@ -58,14 +58,14 @@ public class DBSearch {
 	 * @param codePath
 	 * @return
 	 */
-	public Product getProductByID(EntityManager em, long prodcutId) {
+	public Product getProductByID(EntityManager em, long productId) {
 		Product returnProduct = null;
 		try {
 
 			TypedQuery<Product> query = em.createQuery(
-					"from Product p where p.prodcutId = ?",
+					"from Product p where p.productId = ?",
 					Product.class);
-			query.setParameter(1, prodcutId);
+			query.setParameter(1, productId);
 			List<Product> result = query.getResultList();
 			if (result.isEmpty()) {
 				return returnProduct;
@@ -74,8 +74,8 @@ public class DBSearch {
 					System.err
 							.println("ERROR: We have ["
 									+ result.size()
-									+ "] Products that have the prodcutId of ["
-									+ prodcutId
+									+ "] Products that have the productId of ["
+									+ productId
 									+ "]. This should not happen.  Returning null");
 					return returnProduct;
 				} else {

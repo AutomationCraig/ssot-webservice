@@ -21,7 +21,7 @@ public class Product implements java.io.Serializable {
 	@Id
 	private @GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(updatable = false, nullable = false)
-	Long prodcutId;
+	Long productId;
 
 	@Version
 	private @Column(name = "version")
@@ -60,8 +60,8 @@ public class Product implements java.io.Serializable {
 	}
 	
 
-	public Long getProdcutId() {
-		return prodcutId;
+	public Long getProductId() {
+		return productId;
 	}
 
 	public String toString() {

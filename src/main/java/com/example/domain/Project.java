@@ -36,7 +36,7 @@ public class Project implements java.io.Serializable {
 	private String projectName;
 
 	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="prodcutId")
+	@JoinColumn(name="productId")
 	private Product product;
 	
 	@OneToMany(mappedBy="project")
