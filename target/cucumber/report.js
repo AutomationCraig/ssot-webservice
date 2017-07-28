@@ -21,47 +21,46 @@ formatter.step({
 });
 formatter.step({
   "line": 5,
-  "name": "the user calls the project end point passing in a specific id \u003c1\u003e",
+  "name": "the user calls the project end point passing in a specific id \u003c2\u003e",
   "keyword": "When "
 });
 formatter.step({
   "line": 6,
-  "name": "they will get the build info with tests info on that project that matches that id \u003c1\u003e",
+  "name": "they will get the build info with tests info on that project that matches that id \u003c2\u003e",
   "keyword": "Then "
 });
 formatter.match({
   "location": "CucumberStepDefs.the_REST_Service_is_up()"
 });
 formatter.result({
-  "duration": 510799386,
+  "duration": 382394510,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "1",
+      "val": "2",
       "offset": 63
     }
   ],
   "location": "CucumberStepDefs.the_user_calls_the_project_end_point_passing_in_a_specific_id_(int)"
 });
 formatter.result({
-  "duration": 76578278,
+  "duration": 145424829,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "1",
+      "val": "2",
       "offset": 83
     }
   ],
   "location": "CucumberStepDefs.they_will_get_the_build_info_with_tests_info_on_that_project_that_matches_that_id_(int)"
 });
 formatter.result({
-  "duration": 107473070,
-  "error_message": "junit.framework.AssertionFailedError\n\tat junit.framework.Assert.fail(Assert.java:48)\n\tat junit.framework.Assert.assertTrue(Assert.java:20)\n\tat junit.framework.Assert.assertNotNull(Assert.java:218)\n\tat junit.framework.Assert.assertNotNull(Assert.java:211)\n\tat cucumber.features.CucumberStepDefs.they_will_get_the_build_info_with_tests_info_on_that_project_that_matches_that_id_(CucumberStepDefs.java:84)\n\tat ✽.Then they will get the build info with tests info on that project that matches that id \u003c1\u003e(cucumber/features/getBuildInfoForSpecificProject.feature:6)\n",
-  "status": "failed"
+  "duration": 154273042,
+  "status": "passed"
 });
 formatter.uri('cucumber/features/getProducts.feature');
 formatter.feature({
@@ -98,21 +97,21 @@ formatter.match({
   "location": "CucumberStepDefs.the_REST_Service_is_up()"
 });
 formatter.result({
-  "duration": 7137644,
+  "duration": 6790433,
   "status": "passed"
 });
 formatter.match({
   "location": "CucumberStepDefs.the_user_calls_the_products_end_point()"
 });
 formatter.result({
-  "duration": 41800684,
+  "duration": 80607409,
   "status": "passed"
 });
 formatter.match({
   "location": "CucumberStepDefs.they_will_get_a_list_of_all_products_in_the_database()"
 });
 formatter.result({
-  "duration": 29954124,
+  "duration": 8708596,
   "status": "passed"
 });
 formatter.scenario({
@@ -142,7 +141,7 @@ formatter.match({
   "location": "CucumberStepDefs.the_REST_Service_is_up()"
 });
 formatter.result({
-  "duration": 64640,
+  "duration": 63527,
   "status": "passed"
 });
 formatter.match({
@@ -155,7 +154,7 @@ formatter.match({
   "location": "CucumberStepDefs.the_user_calls_the_products_end_point_passing_in_a_specific_id_(int)"
 });
 formatter.result({
-  "duration": 17071893,
+  "duration": 47917445,
   "status": "passed"
 });
 formatter.match({
@@ -168,7 +167,7 @@ formatter.match({
   "location": "CucumberStepDefs.they_will_get_the_products_info_on_the_product_that_matches_that_id_(int)"
 });
 formatter.result({
-  "duration": 1549138,
+  "duration": 9113109,
   "error_message": "junit.framework.AssertionFailedError\n\tat junit.framework.Assert.fail(Assert.java:48)\n\tat junit.framework.Assert.assertTrue(Assert.java:20)\n\tat junit.framework.Assert.assertNotNull(Assert.java:218)\n\tat junit.framework.Assert.assertNotNull(Assert.java:211)\n\tat cucumber.features.CucumberStepDefs.they_will_get_the_products_info_on_the_product_that_matches_that_id_(CucumberStepDefs.java:65)\n\tat ✽.Then they will get the products info on the product that matches that id \u003c2\u003e(cucumber/features/getProducts.feature:11)\n",
   "status": "failed"
 });
@@ -207,21 +206,21 @@ formatter.match({
   "location": "CucumberStepDefs.the_REST_Service_is_up()"
 });
 formatter.result({
-  "duration": 13612117,
+  "duration": 22544808,
   "status": "passed"
 });
 formatter.match({
   "location": "CucumberStepDefs.the_user_calls_the_projects_end_point()"
 });
 formatter.result({
-  "duration": 95093179,
+  "duration": 145922283,
   "status": "passed"
 });
 formatter.match({
   "location": "CucumberStepDefs.they_will_get_a_list_of_all_projects_in_the_database()"
 });
 formatter.result({
-  "duration": 37949872,
+  "duration": 42197123,
   "status": "passed"
 });
 formatter.scenario({
@@ -239,46 +238,45 @@ formatter.step({
 });
 formatter.step({
   "line": 10,
-  "name": "the user calls the project end point passing in a specific id \u003c1\u003e",
+  "name": "the user calls the project end point passing in a specific id \u003c2\u003e",
   "keyword": "When "
 });
 formatter.step({
   "line": 11,
-  "name": "they will get the project info on the project that matches that id \u003c1\u003e",
+  "name": "they will get the project info on the project that matches that id \u003c2\u003e",
   "keyword": "Then "
 });
 formatter.match({
   "location": "CucumberStepDefs.the_REST_Service_is_up()"
 });
 formatter.result({
-  "duration": 63852,
+  "duration": 64915,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "1",
+      "val": "2",
       "offset": 63
     }
   ],
   "location": "CucumberStepDefs.the_user_calls_the_project_end_point_passing_in_a_specific_id_(int)"
 });
 formatter.result({
-  "duration": 44204500,
+  "duration": 129933651,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "1",
+      "val": "2",
       "offset": 68
     }
   ],
   "location": "CucumberStepDefs.they_will_get_the_project_info_on_the_project_that_matches_that_id_(int)"
 });
 formatter.result({
-  "duration": 618208,
-  "error_message": "junit.framework.AssertionFailedError\n\tat junit.framework.Assert.fail(Assert.java:48)\n\tat junit.framework.Assert.assertTrue(Assert.java:20)\n\tat junit.framework.Assert.assertNotNull(Assert.java:218)\n\tat junit.framework.Assert.assertNotNull(Assert.java:211)\n\tat cucumber.features.CucumberStepDefs.they_will_get_the_project_info_on_the_project_that_matches_that_id_(CucumberStepDefs.java:111)\n\tat ✽.Then they will get the project info on the project that matches that id \u003c1\u003e(cucumber/features/getProjects.feature:11)\n",
-  "status": "failed"
+  "duration": 22070517,
+  "status": "passed"
 });
 });

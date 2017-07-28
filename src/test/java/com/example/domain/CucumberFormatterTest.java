@@ -19,6 +19,8 @@ public class CucumberFormatterTest {
     
     @Test
     public void addCucumberFileToDBTest() throws IOException {
+    	CreatingObjectsTest.setProductName("SSOT");
+    	CreatingObjectsTest.setProjectName("ssot-webService");
     	CreatingObjectsTest.addProduct();
     	CreatingObjectsTest.addProject();
     	

@@ -15,8 +15,16 @@ public class CreatingObjectsTest {
 	
 	public static String productName = "SSOT";
 	public static String projectName = "ssot-webservice";
-	
-	
+	public static void setProductName(String productName) {
+		CreatingObjectsTest.productName = productName;
+	}
+	public static void setProjectName(String projectName) {
+		CreatingObjectsTest.projectName = projectName;
+	}
+
+
+
+
 	@Test
 	public void addProductProjectAndBuildToDataBaseTest() {
 		addProduct();

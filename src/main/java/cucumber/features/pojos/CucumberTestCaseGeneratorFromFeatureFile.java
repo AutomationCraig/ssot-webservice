@@ -24,7 +24,7 @@ public class CucumberTestCaseGeneratorFromFeatureFile {
 			}
 			test.setTimestamp(new Date());
 			test.setLocation(feature.getUri());
-			test.setRunStatus(areAllStatusesPassing(feature));
+			test.setRunStatus(areAllStatusesPassing(element));
 			test.setDescription(description);
 			allTests.add(test);
 		}
@@ -32,12 +32,10 @@ public class CucumberTestCaseGeneratorFromFeatureFile {
 	}
 
 
-	public static RunStatus areAllStatusesPassing(Feature feature) {
-		for (Element element : feature.getElements()) {
-			for (Step step : element.getSteps()) {
-				if(step.getResult().equals(STATUS_TO_CHECK_FOR_FAILED)) {
-					return RunStatus.FAILED;
-				}
+	public static RunStatus areAllStatusesPassing(Element element) {
+		for (Step step : element.getSteps()) {
+			if(step.getResult().getStatus().equals(STATUS_TO_CHECK_FOR_FAILED)) {
+				return RunStatus.FAILED;
 			}
 		}
 		return RunStatus.PASSED;
