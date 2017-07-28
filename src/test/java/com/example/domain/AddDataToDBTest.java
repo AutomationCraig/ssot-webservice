@@ -78,6 +78,7 @@ public class AddDataToDBTest {
 		
 		
 		CucumberFormatterTest.addBuildForOurCucumberFeatureResultsToSSOT();
+		JasmineFormatterTest.addBuildForOurJasmineSpecResultsToSSOT();
 	}
 	
 	

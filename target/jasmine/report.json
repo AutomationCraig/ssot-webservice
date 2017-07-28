@@ -1,163 +1,328 @@
-{  
-   "myApp.version module":{  
-      "interpolate filter":{  
-         "should replace VERSION":{  
-            "log":[  
-
-            ],
-            "time":19,
-            "status":"PASSED",
-            "noExpectationsWarning":false
-         }
-      },
-      "app-version directive":{  
-         "should print current version":{  
-            "log":[  
-
-            ],
-            "time":12,
-            "status":"PASSED",
-            "noExpectationsWarning":false
-         }
-      },
-      "version service":{  
-         "should return current version":{  
-            "log":[  
-
-            ],
-            "time":4,
-            "status":"PASSED",
-            "noExpectationsWarning":false
-         }
-      }
-   },
-   "myApp.view1 module":{  
-      "view1 controller":{  
-         "should ....":{  
-            "log":[  
-               "Error: [$injector:unpr] Unknown provider: getProvider <- get <- View1Ctrl",
-               "http://errors.angularjs.org/1.5.11/$injector/unpr?p0=getProvider%20%3C-%20get%20%3C-%20View1Ctrl",
-               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:68:12",
-               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4563:19",
-               "    at Object.getService [as get] (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4716:32)",
-               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4568:45",
-               "    at getService (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4716:32)",
-               "    at injectionArgs (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4741:58)",
-               "    at Object.instantiate (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4783:18)",
-               "    at $controller (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:10607:28)",
-               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular-mocks/angular-mocks.js:2249:14",
-               "    at Object.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:11:23)",
-               "Error: Declaration Location",
-               "    at window.inject.angular.mock.inject (/Users/kyle/projects/vgiHackUI/app/bower_components/angular-mocks/angular-mocks.js:3093:25)",
-               "    at Suite.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:9:23)",
-               "    at Suite.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:7:3)",
-               "    at /Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:3:1"
-            ],
-            "time":6,
-            "status":"FAILED",
-            "noExpectationsWarning":false
-         }
-      },
-      "All Products View":{  
-         "should get a list of all products":{  
-            "log":[  
-               "Error: [$injector:unpr] Unknown provider: getProvider <- get <- View1Ctrl",
-               "http://errors.angularjs.org/1.5.11/$injector/unpr?p0=getProvider%20%3C-%20get%20%3C-%20View1Ctrl",
-               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:68:12",
-               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4563:19",
-               "    at Object.getService [as get] (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4716:32)",
-               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4568:45",
-               "    at getService (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4716:32)",
-               "    at injectionArgs (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4741:58)",
-               "    at Object.instantiate (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4783:18)",
-               "    at $controller (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:10607:28)",
-               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular-mocks/angular-mocks.js:2249:14",
-               "    at Object.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:21:23)",
-               "Error: Declaration Location",
-               "    at window.inject.angular.mock.inject (/Users/kyle/projects/vgiHackUI/app/bower_components/angular-mocks/angular-mocks.js:3093:25)",
-               "    at Suite.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:19:45)",
-               "    at Suite.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:17:3)",
-               "    at /Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:3:1"
-            ],
-            "time":1,
-            "status":"FAILED",
-            "noExpectationsWarning":false
-         },
-         "should fail gracefully":{  
-            "log":[  
-               "Error: [$injector:unpr] Unknown provider: getProvider <- get <- View1Ctrl",
-               "http://errors.angularjs.org/1.5.11/$injector/unpr?p0=getProvider%20%3C-%20get%20%3C-%20View1Ctrl",
-               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:68:12",
-               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4563:19",
-               "    at Object.getService [as get] (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4716:32)",
-               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4568:45",
-               "    at getService (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4716:32)",
-               "    at injectionArgs (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4741:58)",
-               "    at Object.instantiate (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4783:18)",
-               "    at $controller (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:10607:28)",
-               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular-mocks/angular-mocks.js:2249:14",
-               "    at Object.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:26:23)",
-               "Error: Declaration Location",
-               "    at window.inject.angular.mock.inject (/Users/kyle/projects/vgiHackUI/app/bower_components/angular-mocks/angular-mocks.js:3093:25)",
-               "    at Suite.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:25:34)",
-               "    at Suite.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:17:3)",
-               "    at /Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:3:1"
-            ],
-            "time":1,
-            "status":"FAILED",
-            "noExpectationsWarning":false
-         }
-      },
-      "Selecting a product":{  
-         "load list of all projects in selected product":{  
-            "log":[  
-
-            ],
-            "time":0,
-            "status":"SKIPPED"
-         },
-         "should load product view":{  
-            "log":[  
-
-            ],
-            "time":0,
-            "status":"SKIPPED"
-         }
-      },
-      "Testing a skipped test":{  
-         "should not be tested":{  
-            "log":[  
-
-            ],
-            "time":0,
-            "status":"SKIPPED"
-         }
-      },
-      "Making a Failing test":{  
-         "should fail":{  
-            "log":[  
-               "Error: [$injector:unpr] Unknown provider: getProvider <- get <- View1Ctrl",
-               "http://errors.angularjs.org/1.5.11/$injector/unpr?p0=getProvider%20%3C-%20get%20%3C-%20View1Ctrl",
-               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:68:12",
-               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4563:19",
-               "    at Object.getService [as get] (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4716:32)",
-               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4568:45",
-               "    at getService (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4716:32)",
-               "    at injectionArgs (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4741:58)",
-               "    at Object.instantiate (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4783:18)",
-               "    at $controller (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:10607:28)",
-               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular-mocks/angular-mocks.js:2249:14",
-               "    at Object.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:82:23)",
-               "Error: Declaration Location",
-               "    at window.inject.angular.mock.inject (/Users/kyle/projects/vgiHackUI/app/bower_components/angular-mocks/angular-mocks.js:3093:25)",
-               "    at Suite.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:80:23)",
-               "    at Suite.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:72:3)",
-               "    at /Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:3:1"
-            ],
-            "time":1,
-            "status":"FAILED",
-            "noExpectationsWarning":false
-         }
-      }
-   }
+{
+    "summary": {
+        "success": 3,
+        "failed": 7,
+        "error": false,
+        "disconnected": false,
+        "exitCode": 1
+    },
+    "browsers": [
+        {
+            "browser": {
+                "id": "17982007",
+                "fullName": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36",
+                "name": "Chrome 59.0.3071 (Mac OS X 10.12.5)",
+                "state": 1,
+                "lastResult": {
+                    "success": 3,
+                    "failed": 7,
+                    "skipped": 3,
+                    "total": 13,
+                    "totalTime": 60,
+                    "netTime": 51,
+                    "error": false,
+                    "disconnected": false
+                },
+                "disconnectsCount": 0
+            },
+            "errors": [],
+            "results": [
+                {
+                    "description": "should replace VERSION",
+                    "id": "spec0",
+                    "log": [],
+                    "skipped": false,
+                    "success": true,
+                    "suite": [
+                        "myApp.version module",
+                        "interpolate filter"
+                    ],
+                    "time": 19,
+                    "executedExpectationsCount": 1
+                },
+                {
+                    "description": "should print current version",
+                    "id": "spec1",
+                    "log": [],
+                    "skipped": false,
+                    "success": true,
+                    "suite": [
+                        "myApp.version module",
+                        "app-version directive"
+                    ],
+                    "time": 12,
+                    "executedExpectationsCount": 1
+                },
+                {
+                    "description": "should return current version",
+                    "id": "spec2",
+                    "log": [],
+                    "skipped": false,
+                    "success": true,
+                    "suite": [
+                        "myApp.version module",
+                        "version service"
+                    ],
+                    "time": 3,
+                    "executedExpectationsCount": 1
+                },
+                {
+                    "description": "should ....",
+                    "id": "spec3",
+                    "log": [
+                        "Error: [$injector:unpr] Unknown provider: getProvider <- get <- View1Ctrl",
+                        "http://errors.angularjs.org/1.5.11/$injector/unpr?p0=getProvider%20%3C-%20get%20%3C-%20View1Ctrl",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:68:12",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4563:19",
+                        "    at Object.getService [as get] (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4716:32)",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4568:45",
+                        "    at getService (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4716:32)",
+                        "    at injectionArgs (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4741:58)",
+                        "    at Object.instantiate (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4783:18)",
+                        "    at $controller (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:10607:28)",
+                        "    at http://localhost:9876/base/bower_components/angular-mocks/angular-mocks.js?afdb4899f2f25710532fb61c0526ff3fcce8b578:2249:14",
+                        "    at Object.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:11:23)",
+                        "Error: Declaration Location",
+                        "    at window.inject.angular.mock.inject (http://localhost:9876/base/bower_components/angular-mocks/angular-mocks.js?afdb4899f2f25710532fb61c0526ff3fcce8b578:3093:25)",
+                        "    at Suite.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:9:23)",
+                        "    at Suite.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:7:3)",
+                        "    at http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:3:1"
+                    ],
+                    "skipped": false,
+                    "success": false,
+                    "suite": [
+                        "myApp.view1 module",
+                        "view1 controller"
+                    ],
+                    "time": 7,
+                    "executedExpectationsCount": 1
+                },
+                {
+                    "description": "should get a list of all products",
+                    "id": "spec4",
+                    "log": [
+                        "Error: [$injector:unpr] Unknown provider: getProvider <- get <- View1Ctrl",
+                        "http://errors.angularjs.org/1.5.11/$injector/unpr?p0=getProvider%20%3C-%20get%20%3C-%20View1Ctrl",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:68:12",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4563:19",
+                        "    at Object.getService [as get] (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4716:32)",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4568:45",
+                        "    at getService (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4716:32)",
+                        "    at injectionArgs (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4741:58)",
+                        "    at Object.instantiate (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4783:18)",
+                        "    at $controller (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:10607:28)",
+                        "    at http://localhost:9876/base/bower_components/angular-mocks/angular-mocks.js?afdb4899f2f25710532fb61c0526ff3fcce8b578:2249:14",
+                        "    at Object.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:21:23)",
+                        "Error: Declaration Location",
+                        "    at window.inject.angular.mock.inject (http://localhost:9876/base/bower_components/angular-mocks/angular-mocks.js?afdb4899f2f25710532fb61c0526ff3fcce8b578:3093:25)",
+                        "    at Suite.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:19:45)",
+                        "    at Suite.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:17:3)",
+                        "    at http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:3:1"
+                    ],
+                    "skipped": false,
+                    "success": false,
+                    "suite": [
+                        "myApp.view1 module",
+                        "All Products View"
+                    ],
+                    "time": 2,
+                    "executedExpectationsCount": 1
+                },
+                {
+                    "description": "should fail gracefully",
+                    "id": "spec5",
+                    "log": [
+                        "Error: [$injector:unpr] Unknown provider: getProvider <- get <- View1Ctrl",
+                        "http://errors.angularjs.org/1.5.11/$injector/unpr?p0=getProvider%20%3C-%20get%20%3C-%20View1Ctrl",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:68:12",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4563:19",
+                        "    at Object.getService [as get] (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4716:32)",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4568:45",
+                        "    at getService (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4716:32)",
+                        "    at injectionArgs (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4741:58)",
+                        "    at Object.instantiate (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4783:18)",
+                        "    at $controller (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:10607:28)",
+                        "    at http://localhost:9876/base/bower_components/angular-mocks/angular-mocks.js?afdb4899f2f25710532fb61c0526ff3fcce8b578:2249:14",
+                        "    at Object.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:26:23)",
+                        "Error: Declaration Location",
+                        "    at window.inject.angular.mock.inject (http://localhost:9876/base/bower_components/angular-mocks/angular-mocks.js?afdb4899f2f25710532fb61c0526ff3fcce8b578:3093:25)",
+                        "    at Suite.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:25:34)",
+                        "    at Suite.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:17:3)",
+                        "    at http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:3:1"
+                    ],
+                    "skipped": false,
+                    "success": false,
+                    "suite": [
+                        "myApp.view1 module",
+                        "All Products View"
+                    ],
+                    "time": 1,
+                    "executedExpectationsCount": 1
+                },
+                {
+                    "description": "load list of all projects in selected product",
+                    "id": "spec6",
+                    "log": [
+                        "Error: [$injector:unpr] Unknown provider: getProvider <- get <- View1Ctrl",
+                        "http://errors.angularjs.org/1.5.11/$injector/unpr?p0=getProvider%20%3C-%20get%20%3C-%20View1Ctrl",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:68:12",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4563:19",
+                        "    at Object.getService [as get] (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4716:32)",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4568:45",
+                        "    at getService (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4716:32)",
+                        "    at injectionArgs (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4741:58)",
+                        "    at Object.instantiate (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4783:18)",
+                        "    at $controller (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:10607:28)",
+                        "    at http://localhost:9876/base/bower_components/angular-mocks/angular-mocks.js?afdb4899f2f25710532fb61c0526ff3fcce8b578:2249:14",
+                        "    at Object.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:36:23)",
+                        "Error: Declaration Location",
+                        "    at window.inject.angular.mock.inject (http://localhost:9876/base/bower_components/angular-mocks/angular-mocks.js?afdb4899f2f25710532fb61c0526ff3fcce8b578:3093:25)",
+                        "    at Suite.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:34:57)",
+                        "    at Suite.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:32:3)",
+                        "    at http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:3:1"
+                    ],
+                    "skipped": false,
+                    "success": false,
+                    "suite": [
+                        "myApp.view1 module",
+                        "Selecting a product"
+                    ],
+                    "time": 2,
+                    "executedExpectationsCount": 1
+                },
+                {
+                    "description": "should load product view",
+                    "id": "spec7",
+                    "log": [
+                        "Error: [$injector:unpr] Unknown provider: getProvider <- get <- View1Ctrl",
+                        "http://errors.angularjs.org/1.5.11/$injector/unpr?p0=getProvider%20%3C-%20get%20%3C-%20View1Ctrl",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:68:12",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4563:19",
+                        "    at Object.getService [as get] (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4716:32)",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4568:45",
+                        "    at getService (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4716:32)",
+                        "    at injectionArgs (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4741:58)",
+                        "    at Object.instantiate (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4783:18)",
+                        "    at $controller (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:10607:28)",
+                        "    at http://localhost:9876/base/bower_components/angular-mocks/angular-mocks.js?afdb4899f2f25710532fb61c0526ff3fcce8b578:2249:14",
+                        "    at Object.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:41:23)",
+                        "Error: Declaration Location",
+                        "    at window.inject.angular.mock.inject (http://localhost:9876/base/bower_components/angular-mocks/angular-mocks.js?afdb4899f2f25710532fb61c0526ff3fcce8b578:3093:25)",
+                        "    at Suite.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:40:36)",
+                        "    at Suite.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:32:3)",
+                        "    at http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:3:1"
+                    ],
+                    "skipped": false,
+                    "success": false,
+                    "suite": [
+                        "myApp.view1 module",
+                        "Selecting a product"
+                    ],
+                    "time": 1,
+                    "executedExpectationsCount": 1
+                },
+                {
+                    "description": "load list of all projects in selected product",
+                    "id": "spec8",
+                    "log": [],
+                    "skipped": true,
+                    "success": true,
+                    "suite": [
+                        "myApp.view1 module",
+                        "Selecting a product"
+                    ],
+                    "time": 0,
+                    "executedExpectationsCount": 0
+                },
+                {
+                    "description": "should load product view",
+                    "id": "spec9",
+                    "log": [],
+                    "skipped": true,
+                    "success": true,
+                    "suite": [
+                        "myApp.view1 module",
+                        "Selecting a product"
+                    ],
+                    "time": 0,
+                    "executedExpectationsCount": 0
+                },
+                {
+                    "description": "should not be tested",
+                    "id": "spec10",
+                    "log": [],
+                    "skipped": true,
+                    "success": true,
+                    "suite": [
+                        "myApp.view1 module",
+                        "Testing a skipped test"
+                    ],
+                    "time": 0,
+                    "executedExpectationsCount": 0
+                },
+                {
+                    "description": "should fail",
+                    "id": "spec11",
+                    "log": [
+                        "Error: [$injector:unpr] Unknown provider: getProvider <- get <- View1Ctrl",
+                        "http://errors.angularjs.org/1.5.11/$injector/unpr?p0=getProvider%20%3C-%20get%20%3C-%20View1Ctrl",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:68:12",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4563:19",
+                        "    at Object.getService [as get] (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4716:32)",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4568:45",
+                        "    at getService (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4716:32)",
+                        "    at injectionArgs (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4741:58)",
+                        "    at Object.instantiate (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4783:18)",
+                        "    at $controller (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:10607:28)",
+                        "    at http://localhost:9876/base/bower_components/angular-mocks/angular-mocks.js?afdb4899f2f25710532fb61c0526ff3fcce8b578:2249:14",
+                        "    at Object.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:76:23)",
+                        "Error: Declaration Location",
+                        "    at window.inject.angular.mock.inject (http://localhost:9876/base/bower_components/angular-mocks/angular-mocks.js?afdb4899f2f25710532fb61c0526ff3fcce8b578:3093:25)",
+                        "    at Suite.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:74:23)",
+                        "    at Suite.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:72:3)",
+                        "    at http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:3:1"
+                    ],
+                    "skipped": false,
+                    "success": false,
+                    "suite": [
+                        "myApp.view1 module",
+                        "Making a Failing test"
+                    ],
+                    "time": 3,
+                    "executedExpectationsCount": 1
+                },
+                {
+                    "description": "should fail",
+                    "id": "spec12",
+                    "log": [
+                        "Error: [$injector:unpr] Unknown provider: getProvider <- get <- View1Ctrl",
+                        "http://errors.angularjs.org/1.5.11/$injector/unpr?p0=getProvider%20%3C-%20get%20%3C-%20View1Ctrl",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:68:12",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4563:19",
+                        "    at Object.getService [as get] (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4716:32)",
+                        "    at http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4568:45",
+                        "    at getService (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4716:32)",
+                        "    at injectionArgs (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4741:58)",
+                        "    at Object.instantiate (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:4783:18)",
+                        "    at $controller (http://localhost:9876/base/bower_components/angular/angular.js?ebd53c9a12c1c2f680ea812060e9e5354bae00c0:10607:28)",
+                        "    at http://localhost:9876/base/bower_components/angular-mocks/angular-mocks.js?afdb4899f2f25710532fb61c0526ff3fcce8b578:2249:14",
+                        "    at Object.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:82:23)",
+                        "Error: Declaration Location",
+                        "    at window.inject.angular.mock.inject (http://localhost:9876/base/bower_components/angular-mocks/angular-mocks.js?afdb4899f2f25710532fb61c0526ff3fcce8b578:3093:25)",
+                        "    at Suite.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:80:23)",
+                        "    at Suite.<anonymous> (http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:72:3)",
+                        "    at http://localhost:9876/base/view1/view1_test.js?f60b7fde8006441e862af2725366c02a998d35ef:3:1"
+                    ],
+                    "skipped": false,
+                    "success": false,
+                    "suite": [
+                        "myApp.view1 module",
+                        "Making a Failing test"
+                    ],
+                    "time": 1,
+                    "executedExpectationsCount": 1
+                }
+            ]
+        }
+    ]
 }
