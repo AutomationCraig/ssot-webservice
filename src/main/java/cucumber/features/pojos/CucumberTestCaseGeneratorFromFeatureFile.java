@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 import com.example.domain.TestCase;
 import com.example.domain.utils.RunStatus;
 
-@Entity
 public class CucumberTestCaseGeneratorFromFeatureFile {
 	
 	private static final String STATUS_TO_CHECK_FOR_FAILED = "failed";

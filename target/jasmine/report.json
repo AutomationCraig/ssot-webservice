@@ -1,0 +1,163 @@
+{  
+   "myApp.version module":{  
+      "interpolate filter":{  
+         "should replace VERSION":{  
+            "log":[  
+
+            ],
+            "time":19,
+            "status":"PASSED",
+            "noExpectationsWarning":false
+         }
+      },
+      "app-version directive":{  
+         "should print current version":{  
+            "log":[  
+
+            ],
+            "time":12,
+            "status":"PASSED",
+            "noExpectationsWarning":false
+         }
+      },
+      "version service":{  
+         "should return current version":{  
+            "log":[  
+
+            ],
+            "time":4,
+            "status":"PASSED",
+            "noExpectationsWarning":false
+         }
+      }
+   },
+   "myApp.view1 module":{  
+      "view1 controller":{  
+         "should ....":{  
+            "log":[  
+               "Error: [$injector:unpr] Unknown provider: getProvider <- get <- View1Ctrl",
+               "http://errors.angularjs.org/1.5.11/$injector/unpr?p0=getProvider%20%3C-%20get%20%3C-%20View1Ctrl",
+               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:68:12",
+               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4563:19",
+               "    at Object.getService [as get] (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4716:32)",
+               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4568:45",
+               "    at getService (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4716:32)",
+               "    at injectionArgs (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4741:58)",
+               "    at Object.instantiate (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4783:18)",
+               "    at $controller (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:10607:28)",
+               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular-mocks/angular-mocks.js:2249:14",
+               "    at Object.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:11:23)",
+               "Error: Declaration Location",
+               "    at window.inject.angular.mock.inject (/Users/kyle/projects/vgiHackUI/app/bower_components/angular-mocks/angular-mocks.js:3093:25)",
+               "    at Suite.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:9:23)",
+               "    at Suite.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:7:3)",
+               "    at /Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:3:1"
+            ],
+            "time":6,
+            "status":"FAILED",
+            "noExpectationsWarning":false
+         }
+      },
+      "All Products View":{  
+         "should get a list of all products":{  
+            "log":[  
+               "Error: [$injector:unpr] Unknown provider: getProvider <- get <- View1Ctrl",
+               "http://errors.angularjs.org/1.5.11/$injector/unpr?p0=getProvider%20%3C-%20get%20%3C-%20View1Ctrl",
+               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:68:12",
+               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4563:19",
+               "    at Object.getService [as get] (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4716:32)",
+               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4568:45",
+               "    at getService (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4716:32)",
+               "    at injectionArgs (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4741:58)",
+               "    at Object.instantiate (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4783:18)",
+               "    at $controller (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:10607:28)",
+               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular-mocks/angular-mocks.js:2249:14",
+               "    at Object.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:21:23)",
+               "Error: Declaration Location",
+               "    at window.inject.angular.mock.inject (/Users/kyle/projects/vgiHackUI/app/bower_components/angular-mocks/angular-mocks.js:3093:25)",
+               "    at Suite.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:19:45)",
+               "    at Suite.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:17:3)",
+               "    at /Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:3:1"
+            ],
+            "time":1,
+            "status":"FAILED",
+            "noExpectationsWarning":false
+         },
+         "should fail gracefully":{  
+            "log":[  
+               "Error: [$injector:unpr] Unknown provider: getProvider <- get <- View1Ctrl",
+               "http://errors.angularjs.org/1.5.11/$injector/unpr?p0=getProvider%20%3C-%20get%20%3C-%20View1Ctrl",
+               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:68:12",
+               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4563:19",
+               "    at Object.getService [as get] (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4716:32)",
+               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4568:45",
+               "    at getService (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4716:32)",
+               "    at injectionArgs (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4741:58)",
+               "    at Object.instantiate (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4783:18)",
+               "    at $controller (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:10607:28)",
+               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular-mocks/angular-mocks.js:2249:14",
+               "    at Object.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:26:23)",
+               "Error: Declaration Location",
+               "    at window.inject.angular.mock.inject (/Users/kyle/projects/vgiHackUI/app/bower_components/angular-mocks/angular-mocks.js:3093:25)",
+               "    at Suite.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:25:34)",
+               "    at Suite.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:17:3)",
+               "    at /Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:3:1"
+            ],
+            "time":1,
+            "status":"FAILED",
+            "noExpectationsWarning":false
+         }
+      },
+      "Selecting a product":{  
+         "load list of all projects in selected product":{  
+            "log":[  
+
+            ],
+            "time":0,
+            "status":"SKIPPED"
+         },
+         "should load product view":{  
+            "log":[  
+
+            ],
+            "time":0,
+            "status":"SKIPPED"
+         }
+      },
+      "Testing a skipped test":{  
+         "should not be tested":{  
+            "log":[  
+
+            ],
+            "time":0,
+            "status":"SKIPPED"
+         }
+      },
+      "Making a Failing test":{  
+         "should fail":{  
+            "log":[  
+               "Error: [$injector:unpr] Unknown provider: getProvider <- get <- View1Ctrl",
+               "http://errors.angularjs.org/1.5.11/$injector/unpr?p0=getProvider%20%3C-%20get%20%3C-%20View1Ctrl",
+               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:68:12",
+               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4563:19",
+               "    at Object.getService [as get] (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4716:32)",
+               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4568:45",
+               "    at getService (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4716:32)",
+               "    at injectionArgs (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4741:58)",
+               "    at Object.instantiate (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:4783:18)",
+               "    at $controller (/Users/kyle/projects/vgiHackUI/app/bower_components/angular/angular.js:10607:28)",
+               "    at /Users/kyle/projects/vgiHackUI/app/bower_components/angular-mocks/angular-mocks.js:2249:14",
+               "    at Object.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:82:23)",
+               "Error: Declaration Location",
+               "    at window.inject.angular.mock.inject (/Users/kyle/projects/vgiHackUI/app/bower_components/angular-mocks/angular-mocks.js:3093:25)",
+               "    at Suite.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:80:23)",
+               "    at Suite.<anonymous> (/Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:72:3)",
+               "    at /Users/kyle/projects/vgiHackUI/app/view1/view1_test.js:3:1"
+            ],
+            "time":1,
+            "status":"FAILED",
+            "noExpectationsWarning":false
+         }
+      }
+   }
+}
