@@ -131,6 +131,7 @@ public class AddDataToDBTest {
 		CucumberFormatterTest.addBuildForOurCucumberFeatureResultsToSSOT();
 		CucumberFormatterTest.addBuildForOurCucumberFeatureResultsToSSOT();
 		JasmineFormatterTest.addBuildForOurJasmineSpecResultsToSSOT();
+		CukeFormatterTest.addBuildForOurJasmineSpecResultsToSSOT();
 	}
 	
 	

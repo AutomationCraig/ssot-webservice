@@ -1,0 +1,52 @@
+{
+       "programName": "MYCOBOL1",
+       "runtime": "10Apr201712:14:50",
+       "tests": [{
+	           "description": "VERIFY COBOL PROGRAM RUNS",
+	           "givens": [{
+	                           "varName": "LINK.A",
+	                           "varValue": "'123456789012345'"
+	           }, {
+	                           "varName": "LINK.B",
+	                           "varValue": "'543210987654321'"
+	           }, {
+	                           "varName": "LINK.C",
+	                           "varValue": "'A STRING LITERAL'"
+	           }],
+	           "thens": [{
+	                           "varName": "CALL.OTHERPGM.MY-VAR",
+	                           "varValue": "'5432109874654321'"
+	           }, {
+	                           "varName": "FILE.LTRWRITE.1.THING-ID",
+	                           "varValue": "'123456789012345'"
+	           }],
+	           "status": "failed",
+	           "results": [{
+	                           "varName": "THING-ID",
+	                           "expected": "123456789012345",
+	                           "actual": "543210987654321"
+	           }]},
+	           
+	           {
+	           "description": "VERIFY COBOL PROGRAM IS AWESOME",
+	           "givens": [{
+	                           "varName": "LINK.A",
+	                           "varValue": "'123456789012345'"
+	           }, {
+	                           "varName": "LINK.B",
+	                           "varValue": "'543210987654321'"
+	           }, {
+	                           "varName": "LINK.C",
+	                           "varValue": "'A STRING LITERAL'"
+	           }],
+	           "thens": [{
+	                           "varName": "CALL.OTHERPGM.MY-VAR",
+	                           "varValue": "'5432109874654321'"
+	           }, {
+	                           "varName": "FILE.LTRWRITE.1.THING-ID",
+	                           "varValue": "'123456789012345'"
+	           }],
+	           "status": "passed"
+	           
+   			   }]
+}
