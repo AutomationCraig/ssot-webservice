@@ -12,7 +12,9 @@ import com.google.gson.Gson;
 
 public class CreatingObjectsTest {
 
-
+	
+	public static String productName = "SSOT";
+	public static String projectName = "ssot-webservice";
 	
 	
 	@Test
@@ -59,7 +61,7 @@ public class CreatingObjectsTest {
 	
 	public static void addProduct() {
 		String baseContext = "http://localhost:8080/ssot-webservice-1.0.0-SNAPSHOT/";
-		String targetURL = baseContext + "rest/webService/addProduct/myProductName";
+		String targetURL = baseContext + "rest/webService/addProduct/" + productName;
 		
 		String JSONInput = "";
 		
@@ -70,7 +72,7 @@ public class CreatingObjectsTest {
 	
 	public static void addProject() {
 		String baseContext = "http://localhost:8080/ssot-webservice-1.0.0-SNAPSHOT/";
-		String targetURL = baseContext + "rest/webService/addProject/myProductName/myProjectName";
+		String targetURL = baseContext + "rest/webService/addProject/" + productName + "/" + projectName;
 		
 		String JSONInput = "";
 		
@@ -83,7 +85,7 @@ public class CreatingObjectsTest {
     	String baseContext = "http://localhost:8080/ssot-webservice-1.0.0-SNAPSHOT/";
 		String targetURL = baseContext + "rest/webService/addBuild";
 		
-		NewBuildPayload payload = new NewBuildPayload("myBuildUrl", testList, "myProjectName");
+		NewBuildPayload payload = new NewBuildPayload("myBuildUrl", testList, projectName);
 		Gson gson = new Gson();
 		String JSONInput = gson.toJson(payload);
 		

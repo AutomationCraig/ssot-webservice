@@ -12,19 +12,10 @@ import org.junit.Test;
 
 import com.google.gson.Gson;
 
+import cucumber.features.pojos.CucumberTestCaseGeneratorFromFeatureFile;
 import cucumber.features.pojos.Feature;
 
 public class CucumberFormatterTest {
-    
-//    @Test
-    public void tryToFormatTest() throws IOException {
-    	File jsonFile = new File("target/cucumber/results.json");
-    	String json = readFile(jsonFile.getAbsolutePath(), Charset.defaultCharset());
-    	System.out.println(json);
-    	Gson gson = new Gson();
-    	Feature[] results = gson.fromJson(json, Feature[].class);
-    	System.out.println("Breakpoint");
-    }
     
     @Test
     public void addCucumberFileToDBTest() throws IOException {
@@ -36,12 +27,15 @@ public class CucumberFormatterTest {
     	String json = readFile(jsonFile.getAbsolutePath(), Charset.defaultCharset());
     	Gson gson = new Gson();
     	Feature[] results = gson.fromJson(json, Feature[].class);
-    	List<TestCase> testList = new ArrayList<TestCase>();
+    	List<TestCase> allTestsFromAllFeatures = new ArrayList<TestCase>();
+    	List<TestCase> testListForCurrentFeature = new ArrayList<TestCase>();
     	for (Feature feature : results) {
-			TestCase testToAdd = new TestCase(feature);
-			testList.add(testToAdd);
+    		testListForCurrentFeature = CucumberTestCaseGeneratorFromFeatureFile.generate(feature);
+    		for (TestCase testCase : testListForCurrentFeature) {
+    			allTestsFromAllFeatures.add(testCase);
+    		}
 		}
-    	CreatingObjectsTest.addBuild(testList);
+    	CreatingObjectsTest.addBuild(allTestsFromAllFeatures);
     }
 
     
