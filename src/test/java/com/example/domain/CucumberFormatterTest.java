@@ -18,15 +18,24 @@ import cucumber.features.pojos.Feature;
 public class CucumberFormatterTest {
     
     @Test
-    public void addCucumberFileToDBTest() throws IOException {
-    	CreatingObjectsTest.setProductName("SSOT");
-    	CreatingObjectsTest.setProjectName("ssot-webService");
-    	CreatingObjectsTest.addProduct();
-    	CreatingObjectsTest.addProject();
+    public void addCucumberFileToDBTest() {
+    	addBuildForOurCucumberFeatureResultsToSSOT();
+    }
+    
+    public static void addBuildForOurCucumberFeatureResultsToSSOT() {
+    	AddDataToDBTest.setProductName("SSOT");
+    	AddDataToDBTest.setProjectName("ssot-webService");
+    	AddDataToDBTest.addProduct();
+    	AddDataToDBTest.addProject();
     	
     	//Now add a build from the Cucumber results file
     	File jsonFile = new File("target/cucumber/results.json");
-    	String json = readFile(jsonFile.getAbsolutePath(), Charset.defaultCharset());
+    	String json = "";
+		try {
+			json = readFile(jsonFile.getAbsolutePath(), Charset.defaultCharset());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
     	Gson gson = new Gson();
     	Feature[] results = gson.fromJson(json, Feature[].class);
     	List<TestCase> allTestsFromAllFeatures = new ArrayList<TestCase>();
@@ -37,7 +46,7 @@ public class CucumberFormatterTest {
     			allTestsFromAllFeatures.add(testCase);
     		}
 		}
-    	CreatingObjectsTest.addBuild(allTestsFromAllFeatures);
+    	AddDataToDBTest.addBuild(allTestsFromAllFeatures);
     }
 
     
