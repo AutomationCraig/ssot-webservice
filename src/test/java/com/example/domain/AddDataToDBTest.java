@@ -45,6 +45,18 @@ public class AddDataToDBTest {
 		testList = Arrays.asList(case1, case2, case3, case4, case5);
 		addBuild(testList);
 		
+		case1 = new TestCase("I can successfully open a TradIRA MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case2 = new TestCase("I can successfully open a RothIRA MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case4 = new TestCase("I can successfully open a Individual MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case5 = new TestCase("I can successfully open a Joint MF Acct", RunStatus.SKIPPED, this.getClass().toString(), new Date());
+		testList = Arrays.asList(case1, case2, case3, case4, case5);
+		addBuild(testList);
+		
+		case1 = new TestCase("I can successfully open a TradIRA MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case2 = new TestCase("I can successfully open a RothIRA MF Acct", RunStatus.FAILED, this.getClass().toString(), new Date());
+		testList = Arrays.asList(case1, case2, case3, case4, case5);
+		addBuild(testList);
+		
 		setProductName("Open_Account");
 		setProjectName("OA_Brokerage");
 		addProduct();
@@ -64,6 +76,34 @@ public class AddDataToDBTest {
 		case5 = new TestCase("I can successfully open a Joint Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
 		testList = Arrays.asList(case1, case2, case3, case4, case5);
 		addBuild(testList);
+
+		case1 = new TestCase("I can successfully open a TradIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case2 = new TestCase("I can successfully open a RothIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case3 = new TestCase("I can successfully open a 529 College Brokerage Acct", RunStatus.FAILED, this.getClass().toString(), new Date());
+		case4 = new TestCase("I can successfully open a Individual Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case5 = new TestCase("I can successfully open a Joint Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		testList = Arrays.asList(case1, case2, case3, case4, case5);
+		addBuild(testList);
+
+		case1 = new TestCase("I can successfully open a TradIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case2 = new TestCase("I can successfully open a RothIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case3 = new TestCase("I can successfully open a 529 College Brokerage Acct", RunStatus.FAILED, this.getClass().toString(), new Date());
+		case4 = new TestCase("I can successfully open a Individual Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case5 = new TestCase("I can successfully open a Joint Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		testList = Arrays.asList(case1, case2, case3, case4, case5);
+		addBuild(testList);
+
+		case1 = new TestCase("I can successfully open a TradIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case2 = new TestCase("I can successfully open a RothIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case4 = new TestCase("I can successfully open a Individual Brokerage Acct", RunStatus.SKIPPED, this.getClass().toString(), new Date());
+		case5 = new TestCase("I can successfully open a Joint Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		testList = Arrays.asList(case1, case2, case3, case4, case5);
+		addBuild(testList);
+
+		case1 = new TestCase("I can successfully open a TradIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case2 = new TestCase("I can successfully open a RothIRA Brokerage Acct", RunStatus.FAILED, this.getClass().toString(), new Date());
+		testList = Arrays.asList(case1, case2, case3, case4, case5);
+		addBuild(testList);
 		
 		
 		setProductName("GEMINI");
@@ -72,11 +112,23 @@ public class AddDataToDBTest {
 		addProject();
 		case1 = new TestCase("I can consume an Annuity file and forward it to CRD", RunStatus.PASSED, this.getClass().toString(), new Date());
 		case2 = new TestCase("I can consume an Retail file and forward it to CRD", RunStatus.SKIPPED, this.getClass().toString(), new Date());
+		case3 = new TestCase("I can consume an Institutional file and forward it to CRD", RunStatus.PASSED, this.getClass().toString(), new Date());
+		testList = Arrays.asList(case1, case2, case3);
+		addBuild(testList);
+		case1 = new TestCase("I can consume an Annuity file and forward it to CRD", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case2 = new TestCase("I can consume an Retail file and forward it to CRD", RunStatus.SKIPPED, this.getClass().toString(), new Date());
 		case3 = new TestCase("I can consume an Institutional file and forward it to CRD", RunStatus.FAILED, this.getClass().toString(), new Date());
+		testList = Arrays.asList(case1, case2, case3);
+		addBuild(testList);
+		case1 = new TestCase("I can consume an Annuity file and forward it to CRD", RunStatus.FAILED, this.getClass().toString(), new Date());
 		testList = Arrays.asList(case1, case2, case3);
 		addBuild(testList);
 		
 		
+		CucumberFormatterTest.addBuildForOurCucumberFeatureResultsToSSOT();
+		CucumberFormatterTest.addBuildForOurCucumberFeatureResultsToSSOT();
+		CucumberFormatterTest.addBuildForOurCucumberFeatureResultsToSSOT();
+		CucumberFormatterTest.addBuildForOurCucumberFeatureResultsToSSOT();
 		CucumberFormatterTest.addBuildForOurCucumberFeatureResultsToSSOT();
 		JasmineFormatterTest.addBuildForOurJasmineSpecResultsToSSOT();
 	}
