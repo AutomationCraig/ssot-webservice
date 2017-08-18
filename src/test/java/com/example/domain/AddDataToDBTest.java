@@ -30,13 +30,28 @@ public class AddDataToDBTest {
 		addProduct();
 		addProject();
 		TestCase case1 = new TestCase("I can successfully open a TradIRA MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		TestCase case2 = new TestCase("I can successfully open a RothIRA MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		TestCase case3 = new TestCase("I can successfully open a 529 College MF Acct", RunStatus.FAILED, this.getClass().toString(), new Date());
-		TestCase case4 = new TestCase("I can successfully open a Individual MF Acct", RunStatus.SKIPPED, this.getClass().toString(), new Date());
-		TestCase case5 = new TestCase("I can successfully open a Joint MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		List<TestCase> testList = Arrays.asList(case1, case2, case3, case4, case5);
+		TestCase case2 = new TestCase("I can successfully open a RothIRA MF Acct", RunStatus.FAILED, this.getClass().toString(), new Date());
+		List<TestCase> testList = Arrays.asList(case1, case2);
 		addBuild(testList);
+		waitSeconds(1);
 		
+		case1 = new TestCase("I can successfully open a TradIRA MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case2 = new TestCase("I can successfully open a RothIRA MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		TestCase case4 = new TestCase("I can successfully open a Individual MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		TestCase case5 = new TestCase("I can successfully open a Joint MF Acct", RunStatus.SKIPPED, this.getClass().toString(), new Date());
+		testList = Arrays.asList(case1, case2, case4, case5);
+		addBuild(testList);
+		waitSeconds(2);
+		
+		case1 = new TestCase("I can successfully open a TradIRA MF Acct", RunStatus.FAILED, this.getClass().toString(), new Date());
+		case2 = new TestCase("I can successfully open a RothIRA MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		TestCase case3 = new TestCase("I can successfully open a 529 College MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case4 = new TestCase("I can successfully open a Individual MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case5 = new TestCase("I can successfully open a Joint MF Acct", RunStatus.SKIPPED, this.getClass().toString(), new Date());
+		testList = Arrays.asList(case1, case2, case3, case4, case5);
+		addBuild(testList);
+		waitSeconds(1);
+
 		case1 = new TestCase("I can successfully open a TradIRA MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
 		case2 = new TestCase("I can successfully open a RothIRA MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
 		case3 = new TestCase("I can successfully open a 529 College MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
@@ -45,22 +60,44 @@ public class AddDataToDBTest {
 		testList = Arrays.asList(case1, case2, case3, case4, case5);
 		addBuild(testList);
 		
-		case1 = new TestCase("I can successfully open a TradIRA MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		case2 = new TestCase("I can successfully open a RothIRA MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		case4 = new TestCase("I can successfully open a Individual MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		case5 = new TestCase("I can successfully open a Joint MF Acct", RunStatus.SKIPPED, this.getClass().toString(), new Date());
-		testList = Arrays.asList(case1, case2, case3, case4, case5);
-		addBuild(testList);
-		
-		case1 = new TestCase("I can successfully open a TradIRA MF Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		case2 = new TestCase("I can successfully open a RothIRA MF Acct", RunStatus.FAILED, this.getClass().toString(), new Date());
-		testList = Arrays.asList(case1, case2, case3, case4, case5);
-		addBuild(testList);
 		
 		setProductName("Open_Account");
 		setProjectName("OA_Brokerage");
 		addProduct();
 		addProject();
+		
+		case1 = new TestCase("I can successfully open a TradIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case2 = new TestCase("I can successfully open a RothIRA Brokerage Acct", RunStatus.FAILED, this.getClass().toString(), new Date());
+		testList = Arrays.asList(case1, case2);
+		addBuild(testList);
+		waitSeconds(1);
+		
+		case1 = new TestCase("I can successfully open a TradIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case2 = new TestCase("I can successfully open a RothIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case4 = new TestCase("I can successfully open a Individual Brokerage Acct", RunStatus.SKIPPED, this.getClass().toString(), new Date());
+		case5 = new TestCase("I can successfully open a Joint Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		testList = Arrays.asList(case1, case2, case4, case5);
+		addBuild(testList);
+		waitSeconds(2);
+		
+		case1 = new TestCase("I can successfully open a TradIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case2 = new TestCase("I can successfully open a RothIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case3 = new TestCase("I can successfully open a 529 College Brokerage Acct", RunStatus.FAILED, this.getClass().toString(), new Date());
+		case4 = new TestCase("I can successfully open a Individual Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case5 = new TestCase("I can successfully open a Joint Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		testList = Arrays.asList(case1, case2, case3, case4, case5);
+		addBuild(testList);
+		waitSeconds(1);
+		
+		case1 = new TestCase("I can successfully open a TradIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case2 = new TestCase("I can successfully open a RothIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case3 = new TestCase("I can successfully open a 529 College Brokerage Acct", RunStatus.FAILED, this.getClass().toString(), new Date());
+		case4 = new TestCase("I can successfully open a Individual Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case5 = new TestCase("I can successfully open a Joint Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
+		testList = Arrays.asList(case1, case2, case3, case4, case5);
+		addBuild(testList);
+		waitSeconds(2);
+
 		case1 = new TestCase("I can successfully open a TradIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
 		case2 = new TestCase("I can successfully open a RothIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
 		case3 = new TestCase("I can successfully open a 529 College Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
@@ -68,40 +105,13 @@ public class AddDataToDBTest {
 		case5 = new TestCase("I can successfully open a Joint Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
 		testList = Arrays.asList(case1, case2, case3, case4, case5);
 		addBuild(testList);
+		waitSeconds(1);
 		
 		case1 = new TestCase("I can successfully open a TradIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
 		case2 = new TestCase("I can successfully open a RothIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		case3 = new TestCase("I can successfully open a 529 College Brokerage Acct", RunStatus.FAILED, this.getClass().toString(), new Date());
+		case3 = new TestCase("I can successfully open a 529 College Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
 		case4 = new TestCase("I can successfully open a Individual Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
 		case5 = new TestCase("I can successfully open a Joint Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		testList = Arrays.asList(case1, case2, case3, case4, case5);
-		addBuild(testList);
-
-		case1 = new TestCase("I can successfully open a TradIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		case2 = new TestCase("I can successfully open a RothIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		case3 = new TestCase("I can successfully open a 529 College Brokerage Acct", RunStatus.FAILED, this.getClass().toString(), new Date());
-		case4 = new TestCase("I can successfully open a Individual Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		case5 = new TestCase("I can successfully open a Joint Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		testList = Arrays.asList(case1, case2, case3, case4, case5);
-		addBuild(testList);
-
-		case1 = new TestCase("I can successfully open a TradIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		case2 = new TestCase("I can successfully open a RothIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		case3 = new TestCase("I can successfully open a 529 College Brokerage Acct", RunStatus.FAILED, this.getClass().toString(), new Date());
-		case4 = new TestCase("I can successfully open a Individual Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		case5 = new TestCase("I can successfully open a Joint Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		testList = Arrays.asList(case1, case2, case3, case4, case5);
-		addBuild(testList);
-
-		case1 = new TestCase("I can successfully open a TradIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		case2 = new TestCase("I can successfully open a RothIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		case4 = new TestCase("I can successfully open a Individual Brokerage Acct", RunStatus.SKIPPED, this.getClass().toString(), new Date());
-		case5 = new TestCase("I can successfully open a Joint Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		testList = Arrays.asList(case1, case2, case3, case4, case5);
-		addBuild(testList);
-
-		case1 = new TestCase("I can successfully open a TradIRA Brokerage Acct", RunStatus.PASSED, this.getClass().toString(), new Date());
-		case2 = new TestCase("I can successfully open a RothIRA Brokerage Acct", RunStatus.FAILED, this.getClass().toString(), new Date());
 		testList = Arrays.asList(case1, case2, case3, case4, case5);
 		addBuild(testList);
 		
@@ -110,30 +120,41 @@ public class AddDataToDBTest {
 		setProjectName("ICAP");
 		addProduct();
 		addProject();
-		case1 = new TestCase("I can consume an Annuity file and forward it to CRD", RunStatus.PASSED, this.getClass().toString(), new Date());
-		case2 = new TestCase("I can consume an Retail file and forward it to CRD", RunStatus.SKIPPED, this.getClass().toString(), new Date());
-		case3 = new TestCase("I can consume an Institutional file and forward it to CRD", RunStatus.PASSED, this.getClass().toString(), new Date());
-		testList = Arrays.asList(case1, case2, case3);
+		case1 = new TestCase("I can consume an Annuity file and forward it to CRD", RunStatus.FAILED, this.getClass().toString(), new Date());
+		testList = Arrays.asList(case1);
 		addBuild(testList);
+		waitSeconds(1);
 		case1 = new TestCase("I can consume an Annuity file and forward it to CRD", RunStatus.PASSED, this.getClass().toString(), new Date());
 		case2 = new TestCase("I can consume an Retail file and forward it to CRD", RunStatus.SKIPPED, this.getClass().toString(), new Date());
 		case3 = new TestCase("I can consume an Institutional file and forward it to CRD", RunStatus.FAILED, this.getClass().toString(), new Date());
 		testList = Arrays.asList(case1, case2, case3);
 		addBuild(testList);
-		case1 = new TestCase("I can consume an Annuity file and forward it to CRD", RunStatus.FAILED, this.getClass().toString(), new Date());
+		waitSeconds(2);
+		case1 = new TestCase("I can consume an Annuity file and forward it to CRD", RunStatus.PASSED, this.getClass().toString(), new Date());
+		case2 = new TestCase("I can consume an Retail file and forward it to CRD", RunStatus.SKIPPED, this.getClass().toString(), new Date());
+		case3 = new TestCase("I can consume an Institutional file and forward it to CRD", RunStatus.PASSED, this.getClass().toString(), new Date());
 		testList = Arrays.asList(case1, case2, case3);
 		addBuild(testList);
 		
 		
 		CucumberFormatterTest.addBuildForOurCucumberFeatureResultsToSSOT();
+		waitSeconds(1);
 		CucumberFormatterTest.addBuildForOurCucumberFeatureResultsToSSOT();
-		CucumberFormatterTest.addBuildForOurCucumberFeatureResultsToSSOT();
-		CucumberFormatterTest.addBuildForOurCucumberFeatureResultsToSSOT();
+		waitSeconds(2);
 		CucumberFormatterTest.addBuildForOurCucumberFeatureResultsToSSOT();
 		JasmineFormatterTest.addBuildForOurJasmineSpecResultsToSSOT();
-		CukeFormatterTest.addBuildForOurJasmineSpecResultsToSSOT();
+		CuteFormatterTest.addBuildForOurJasmineSpecResultsToSSOT();
 	}
 	
+	
+	public void waitSeconds(int seconds) {
+		try {
+			Thread.sleep(seconds * 1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 
 	public static void addProduct() {

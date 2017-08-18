@@ -15,7 +15,7 @@ import com.google.gson.Gson;
 import cuke.runner.pojos.CukeResultsWeCareAbout;
 import cuke.runner.pojos.CukeTestCaseGeneratorResultsJSONFile;
 
-public class CukeFormatterTest {
+public class CuteFormatterTest {
     
     @Test
     public void addCuteFileToDBTest() {

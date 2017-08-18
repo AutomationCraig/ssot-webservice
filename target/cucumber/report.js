@@ -33,7 +33,7 @@ formatter.match({
   "location": "CucumberStepDefs.the_REST_Service_is_up()"
 });
 formatter.result({
-  "duration": 382394510,
+  "duration": 448791694,
   "status": "passed"
 });
 formatter.match({
@@ -46,7 +46,7 @@ formatter.match({
   "location": "CucumberStepDefs.the_user_calls_the_project_end_point_passing_in_a_specific_id_(int)"
 });
 formatter.result({
-  "duration": 145424829,
+  "duration": 87186948,
   "status": "passed"
 });
 formatter.match({
@@ -59,7 +59,7 @@ formatter.match({
   "location": "CucumberStepDefs.they_will_get_the_build_info_with_tests_info_on_that_project_that_matches_that_id_(int)"
 });
 formatter.result({
-  "duration": 154273042,
+  "duration": 170958359,
   "status": "passed"
 });
 formatter.uri('cucumber/features/getProducts.feature');
@@ -97,21 +97,21 @@ formatter.match({
   "location": "CucumberStepDefs.the_REST_Service_is_up()"
 });
 formatter.result({
-  "duration": 6790433,
+  "duration": 9340441,
   "status": "passed"
 });
 formatter.match({
   "location": "CucumberStepDefs.the_user_calls_the_products_end_point()"
 });
 formatter.result({
-  "duration": 80607409,
+  "duration": 23214343,
   "status": "passed"
 });
 formatter.match({
   "location": "CucumberStepDefs.they_will_get_a_list_of_all_products_in_the_database()"
 });
 formatter.result({
-  "duration": 8708596,
+  "duration": 11073510,
   "status": "passed"
 });
 formatter.scenario({
@@ -141,7 +141,7 @@ formatter.match({
   "location": "CucumberStepDefs.the_REST_Service_is_up()"
 });
 formatter.result({
-  "duration": 63527,
+  "duration": 57851,
   "status": "passed"
 });
 formatter.match({
@@ -154,7 +154,7 @@ formatter.match({
   "location": "CucumberStepDefs.the_user_calls_the_products_end_point_passing_in_a_specific_id_(int)"
 });
 formatter.result({
-  "duration": 47917445,
+  "duration": 26425047,
   "status": "passed"
 });
 formatter.match({
@@ -167,7 +167,7 @@ formatter.match({
   "location": "CucumberStepDefs.they_will_get_the_products_info_on_the_product_that_matches_that_id_(int)"
 });
 formatter.result({
-  "duration": 9113109,
+  "duration": 3847438,
   "error_message": "junit.framework.AssertionFailedError\n\tat junit.framework.Assert.fail(Assert.java:48)\n\tat junit.framework.Assert.assertTrue(Assert.java:20)\n\tat junit.framework.Assert.assertNotNull(Assert.java:218)\n\tat junit.framework.Assert.assertNotNull(Assert.java:211)\n\tat cucumber.features.CucumberStepDefs.they_will_get_the_products_info_on_the_product_that_matches_that_id_(CucumberStepDefs.java:65)\n\tat ✽.Then they will get the products info on the product that matches that id \u003c2\u003e(cucumber/features/getProducts.feature:11)\n",
   "status": "failed"
 });
@@ -206,21 +206,21 @@ formatter.match({
   "location": "CucumberStepDefs.the_REST_Service_is_up()"
 });
 formatter.result({
-  "duration": 22544808,
+  "duration": 6744657,
   "status": "passed"
 });
 formatter.match({
   "location": "CucumberStepDefs.the_user_calls_the_projects_end_point()"
 });
 formatter.result({
-  "duration": 145922283,
+  "duration": 221640083,
   "status": "passed"
 });
 formatter.match({
   "location": "CucumberStepDefs.they_will_get_a_list_of_all_projects_in_the_database()"
 });
 formatter.result({
-  "duration": 42197123,
+  "duration": 94491986,
   "status": "passed"
 });
 formatter.scenario({
@@ -250,7 +250,7 @@ formatter.match({
   "location": "CucumberStepDefs.the_REST_Service_is_up()"
 });
 formatter.result({
-  "duration": 64915,
+  "duration": 59239,
   "status": "passed"
 });
 formatter.match({
@@ -263,7 +263,7 @@ formatter.match({
   "location": "CucumberStepDefs.the_user_calls_the_project_end_point_passing_in_a_specific_id_(int)"
 });
 formatter.result({
-  "duration": 129933651,
+  "duration": 110464180,
   "status": "passed"
 });
 formatter.match({
@@ -276,7 +276,7 @@ formatter.match({
   "location": "CucumberStepDefs.they_will_get_the_project_info_on_the_project_that_matches_that_id_(int)"
 });
 formatter.result({
-  "duration": 22070517,
+  "duration": 18563092,
   "status": "passed"
 });
 });

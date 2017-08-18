@@ -9,3 +9,5 @@ Scenario: Get specific products
 Given the REST Service is up
 When the user calls the products end point passing in a specific id <2>
 Then they will get the products info on the product that matches that id <2>
+
+#ID should probably be 68 to pass
